@@ -5,6 +5,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
+    <h1>Jooo</h1>
   </header>
 
 
