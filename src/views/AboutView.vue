@@ -5,12 +5,4 @@
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    background-color: grey;
-   color: red;
-    display: flex;
-    align-items: center;
-  }
-}
 </style>

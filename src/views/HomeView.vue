@@ -4,12 +4,16 @@
 
 <template>
   <main>
-<h1>Jo fra Homeview</h1>
+<h1>Hej fra Homeview :) </h1>
   </main>
 </template>
 <style scoped>
 h1{
-  color:green;
-  background-color: blue;;
+  color:yellow;
+  background-color: blue;
+  font-size:50px;
+  text-align: center;
+  margin-top: 30px;
+  padding: 50px;
 }
 </style>
