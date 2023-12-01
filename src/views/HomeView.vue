@@ -40,7 +40,9 @@ h1{
   background-color: grey;
 
   h2{
-    font-size: 50px;
+    font-size: 30px;
+    text-align: center;
+    padding-top:30px;
   }
 
 }
