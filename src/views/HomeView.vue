@@ -3,17 +3,49 @@
 </script>
 
 <template>
-  <main>
-<h1>Hej fra Homeview :) </h1>
+
+<div class="top-menu-replacement ignore"><h2>Top Menu</h2></div>
+
+  <main class="content">
+
+
+  <h1>Hej fra Homeview :) </h1>
+
+
+
   </main>
+
+
+  <div class="footer-replacement ignore"> <h2>Footer</h2></div>
+
 </template>
-<style scoped>
+
+
+<style lang="scss" scoped>
+
+.content{
+  height: 1000px;
+}
+
 h1{
   color:yellow;
   background-color: blue;
   font-size:50px;
   text-align: center;
-  margin-top: 30px;
+  
   padding: 50px;
 }
+.ignore{
+  height: 150px;
+  background-color: grey;
+
+  h2{
+    font-size: 50px;
+  }
+
+}
+.footer-replacement{
+  height: 400px;;
+}
+
 </style>
