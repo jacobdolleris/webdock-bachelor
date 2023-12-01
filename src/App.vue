@@ -5,16 +5,19 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <h1>Jooo</h1>
-    <h2>Hvordan går det?</h2>
-    <h3>Håber det går fint</h3>
-    <h4>Jajaja</h4>
-    <h5>Farvel!</h5>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </nav>
   </header>
-
-
+<router-view />
 </template>
 
 <style scoped>
-
+a{
+  color:purple;
+  font-size: 30px;
+  margin-right:20px;
+  
+}
 </style>
