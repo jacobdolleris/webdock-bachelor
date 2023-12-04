@@ -1,9 +1,5 @@
-<!-- <style>
-  @import '../assets/main.scss';
-</style> -->
-
 <script setup>
-
+import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 </script>
 
 <template>
@@ -21,11 +17,31 @@
       </div>
 
       <div class="checkout-box-content">
-        <div class="checkout-box-content-row">
-          <h3>CPU</h3>
-          <p>Model: </p>
-          <p>Cost:</p>
-        </div>
+        <Checkoutboxrow
+        title='CPU'
+        model='Jacob A/S'
+        cost='10.000 kr'
+        />
+        <Checkoutboxrow
+        title='RAM'
+        model='Jacob A/S'
+        cost='10.000 kr'
+        />
+        <Checkoutboxrow
+        title='DISCS'
+        model='Jacob A/S'
+        cost='10.000 kr'
+        />
+        <Checkoutboxrow
+        title='Raid Controller'
+        model='Jacob A/S'
+        cost='10.000 kr'
+        />
+        <Checkoutboxrow
+        title='Port Speed'
+        model='Jacob A/S'
+        cost='10.000 kr'
+        />
       </div>
     </div>
 
@@ -45,7 +61,8 @@
 </template>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
+@import '../assets/main.scss';
 
 .content--container {
   background-color: #666666;
@@ -90,8 +107,35 @@
         .checkout-box-content-row {
           border: 1px solid white;
           display: flex;
-          height: 35px;
-          padding-top: 15px;
+          height: 45px;
+          // padding-top: 15px;
+
+          .option-title {
+            width: 200px;
+            background-color: red;
+            
+            h3 {
+            font-weight: bold;
+            padding-left: 1em;
+            padding-top: 10px;
+          }
+          }
+
+          .model {
+            padding-left: 2em;
+            p {
+              padding-top: 10px;
+            }
+          }
+
+          .cost {
+            padding-left: 8em;
+
+            p {
+              padding-top: 10px;
+            }
+          }
+          
         }
       }
     }
