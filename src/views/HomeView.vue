@@ -1,3 +1,8 @@
+<style>
+  @import '../assets/main.scss';
+</style>
+
+
 <script setup>
 
 </script>

@@ -1,3 +1,7 @@
+<style>
+  @import '../assets/main.scss';
+</style>
+
 <script setup>
 
 </script>
@@ -51,6 +55,3 @@ h1{
 
 </style>
 
-<style>
-  @import './assets/mmain.css';
-</style>
