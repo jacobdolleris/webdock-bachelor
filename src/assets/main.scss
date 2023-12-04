@@ -138,15 +138,23 @@ margin-top: -150px;
     border: 3px solid $orange-color;
   
     a{
-        margin-left: 90%;
+
         background-color:$orange-color;
         padding:1%;
         width: 70px;
-        height: 50px;
+        height: 30px;
         border-radius: 10px;
+        text-align: center;
+
+        &:hover{
+            background-color: #cd6b03;
+        }
     }
 
-
+.modal-inner{
+    display: flex;
+    justify-content: space-between;
+}
     
   }
 

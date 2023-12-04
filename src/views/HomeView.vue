@@ -1,5 +1,5 @@
 <script setup>
-import Modal from '@/components/Modal.vue';
+
 </script>
 
 <template>
@@ -16,12 +16,19 @@ import Modal from '@/components/Modal.vue';
   <hr>
  </header>
 
+
+
+
+
+
 <section class="config-section">
 
+
+
 <div class="config-section-inner">
-  
+  <!-- Virkene modul -->
   <div>
-    <a href="#" @click.prevent="openModal('RAM', 'Model: ########, Pris: $$$')">
+    <a href="#" @click.prevent="openModul">
       <div class="config-section-inner-option">
         <h2>RAM</h2>
         <h3>Model: ########</h3>
@@ -29,25 +36,40 @@ import Modal from '@/components/Modal.vue';
       </div>
     </a>
 
-    <!-- Tilføj tre flere lignende blokke for de andre modaler -->
-
-    <Modal :er-åbent="erModalÅbent" :modal-title="modalTitle" @luk-modul="lukModal" />
   </div>
 
+  <div v-if="isModulOpen" class="modal">
+    <div class="modal-inner">
+      
+      <h1>Choose RAM</h1>
+      <a href="#" @click.prevent="closeModul">Close</a>
+    </div>
+    </div>
 
+<!-- SLUT -->
 
 
   <div class="config-ection-inner-image">
   </div>
 
-  <a href="#">
-    <div class="config-section-inner-option">
-      <h2>CPU</h2>
-      <h3>Model : ########</h3>
-      <h3>Price : $$$</h3>
+  <a href="#" @click.prevent="openModul2">
+      <div class="config-section-inner-option">
+        <h2>CPU</h2>
+        <h3>Model: ########</h3>
+        <h3>Pris: $$$</h3>
+      </div>
+    </a>
+
+  </div>
+
+  <div v-if="isModul2Open" class="modal">
+    <div class="modal-inner">
+      
+      <h1>Choose CPU</h1>
+      <a href="#" @click.prevent="closeModul2">Close</a>
     </div>
-  </a>
-</div>
+    </div>
+
 
 <div class="config-section-inner">
   <a href="#">
@@ -109,28 +131,39 @@ header{
 
 
 <script>
-
 export default {
-  components: {
-    Modal
-  },
   data() {
+    
+    
     return {
-      erModalÅbent: false,
-      modalTitle: ''
+      isModulOpen: false,
+      isModul2Open:false,
+      isModul3Open:false,
+      isModul4Open:false,
+      isModul5Open:false
     };
   },
   methods: {
-    openModal(title, content) {
-      this.erModalÅbent = true;
-      this.modalTitle = title;
-      // Tilføj logik for at indstille andet modalindhold efter behov
+    openModul() {
+      this.isModulOpen = true;
     },
-    lukModal() {
-      this.erModalÅbent = false;
+    openModul2() {
+      this.isModul2Open = true;
+    },
+  
+
+
+
+
+    closeModul() {
+      this.isModulOpen = false;
+    },
+    closeModul2() {
+      this.isModul2Open = false;
     }
   }
 };
 </script>
+
 
 
