@@ -17,7 +17,15 @@
 
     <div class="checkout-box">
       <div class="checkout-box-header">
-        
+        <h2>Chosen Options</h2>
+      </div>
+
+      <div class="checkout-box-content">
+        <div class="checkout-box-content-row">
+          <h3>CPU</h3>
+          <p>Model: </p>
+          <p>Cost:</p>
+        </div>
       </div>
     </div>
 
@@ -46,7 +54,7 @@
   width: 100%;
 
   &__checklist {
-    background-color: red;
+    // background-color: red;
     display: flex;
     justify-content: center;
     width: 50%;
@@ -57,11 +65,40 @@
       height: 425px;
       margin-top: 3.5em;
       width: 700px;
+
+      .checkout-box-header {
+        background-color: #EE8007;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: 50px;
+        width: 100%;
+
+        h2 {
+          font-weight: bold;
+          padding-left: 10px;
+          padding-top: 8px;
+        }
+      }
+
+      .checkout-box-content {
+        background-color: #018971;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 375px;
+        width: 100%;
+
+        .checkout-box-content-row {
+          border: 1px solid white;
+          display: flex;
+          height: 35px;
+          padding-top: 15px;
+        }
+      }
     }
   }
 
   &__checkinfo {
-    background-color: green;
+    // background-color: green;
     width: 50%;
   }
 }
