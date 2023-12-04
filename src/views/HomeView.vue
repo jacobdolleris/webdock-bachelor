@@ -1,10 +1,5 @@
-<style>
-  @import '../assets/main.scss';
-</style>
-
-
 <script setup>
-
+import Modal from '@/components/Modal.vue';
 </script>
 
 <template>
@@ -25,18 +20,19 @@
 
 <div class="config-section-inner">
   
-  <a href="#" @click.prevent="openModal">
-    <div class="config-section-inner-option">
-      <h2>RAM</h2>
-      <h3>Model : ########</h3>
-      <h3>Price : $$$</h3>
-    </div>
-  </a>
-  <div v-if="isModalOpen" class="modal">
-    <a href="#" @click.prevent="closeModal"> Close</a>
-      <h1>Choose RAM</h1>
-    </div>
+  <div>
+    <a href="#" @click.prevent="openModal('RAM', 'Model: ########, Pris: $$$')">
+      <div class="config-section-inner-option">
+        <h2>RAM</h2>
+        <h3>Model: ########</h3>
+        <h3>Pris: $$$</h3>
+      </div>
+    </a>
 
+    <!-- Tilføj tre flere lignende blokke for de andre modaler -->
+
+    <Modal :er-åbent="erModalÅbent" :modal-title="modalTitle" @luk-modul="lukModal" />
+  </div>
 
 
 
@@ -85,8 +81,6 @@
 </section>
 
 
-
-
   </main>
 
 
@@ -96,6 +90,7 @@
 
 
 <style lang="scss" scoped>
+  @import '../assets/main.scss';
 header{
   text-align: center;
   h1{
@@ -114,20 +109,25 @@ header{
 
 
 <script>
+
 export default {
+  components: {
+    Modal
+  },
   data() {
     return {
-      isModalOpen: false // start of closed
+      erModalÅbent: false,
+      modalTitle: ''
     };
   },
   methods: {
-    openModal() {
-      // Open mudal
-      this.isModalOpen = true;
+    openModal(title, content) {
+      this.erModalÅbent = true;
+      this.modalTitle = title;
+      // Tilføj logik for at indstille andet modalindhold efter behov
     },
-    closeModal() {
-      // Close
-      this.isModalOpen = false;
+    lukModal() {
+      this.erModalÅbent = false;
     }
   }
 };
