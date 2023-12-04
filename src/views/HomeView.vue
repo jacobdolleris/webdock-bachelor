@@ -21,24 +21,34 @@
   <hr>
  </header>
 
-<section style="background-color: grey; height: 800px; padding-top:100px;">
+<section class="config-section">
 
-<div style="background-color: darkgrey; height: 700px; width: 80%; margin: auto; display: flex; justify-content: space-evenly;">
+<div class="config-section-inner">
+  
+  <div class="config-section-inner-option" style="margin-left: 50px;">
+    <h2>RAM</h2>
+  </div>
 
+  <div class="config-ection-inner-image">
+  </div>
 
-
-<div style="height: 100px; width: 200px; border:1px solid white;">
+  <div class="config-section-inner-option" style="margin-right: 50px;">
+    <h2>CPU</h2>
+  </div>
 </div>
 
-<div style="height:600px; width:700px; background-image: url(../assets/img/server-placeholder.png);">
-</div>
+<div class="config-section-inner">
+  <div class="config-section-inner-option option-midt">
+    <h2>Port Speed</h2>
+  </div>
 
-<div style="height: 100px; width: 200px; border:1px solid white;">
-</div>
+  <div class="config-section-inner-option" style="margin-top:50px;">
+    <h2>DISCS</h2>
+  </div>
 
-
-
-
+  <div class="config-section-inner-option option-midt">
+    <h2>Raid Controller</h2>
+  </div>
 </div>
 
 

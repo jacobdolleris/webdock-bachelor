@@ -66,3 +66,49 @@ hr{
     height: 1500px;
     background-color: black;
   }
+
+
+
+
+
+
+// Midterstykke
+.config-section{
+    background-color: black; 
+    height: 800px; 
+    padding-top:100px;
+}
+.config-section-inner{
+   
+    width: 70%; 
+    margin: auto; 
+    display: flex; 
+    justify-content: space-between;
+}
+
+.config-section-inner-option{
+    height: 100px; 
+    width: 200px; 
+    border:3px solid $teal-color;
+    border-radius: 10px;
+    background-color:$dark-grey-background;
+
+    h2{
+        text-align: center;
+    }
+}
+
+.config-ection-inner-image{
+    height:500px; 
+    width:700px; 
+    background-image: url(../assets/img/server-placeholder.png);
+    background-repeat:no-repeat;
+}
+
+.option-midt{
+    margin-top:-200px
+}
+.option-top{
+
+}
+
