@@ -8,6 +8,7 @@ $webdock-green:#018971;
 $dark-green:#008661;
 $dark-grey-background:#2C404A;
 $grey:#666666;
+$dark-grey:#333333;
 
 //  Clear
 *{
@@ -15,8 +16,9 @@ $grey:#666666;
     padding:0;
     font-family: 'Raleway', sans-serif;
     color: white;
+    background-color: black;
 }
-
+// Rules
 h1{
     font-size: 35px;
     font-weight: 400;
@@ -31,22 +33,36 @@ h3{
 
 }
 
+h4{
+
+}
+
+hr{
+    border:1px solid $teal-color;
+  }
+
 .ignore{
-    height: 150px;
+    height: 100px;
     background-color:$webdock-green;
   
     h2{
       font-size: 30px;
       text-align: center;
       padding-top:30px;
+      background-color:$webdock-green;
     }
   
   }
   .footer-replacement{
-    height: 400px;;
+    height: 300px;
+    background-color:$dark-grey;
+
+    h2{
+        background-color:$dark-grey;
+    }
   }
 
   .content{
-    height: 500px;
+    height: 800px;
     background-color: black;
   }

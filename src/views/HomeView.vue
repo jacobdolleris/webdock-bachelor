@@ -17,7 +17,8 @@
  <header>
   <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
   <h2>For the best experience!</h2>
-
+  <img src="../assets/img/icons/Arrow.png" alt="">
+  <hr>
  </header>
 
 
@@ -38,6 +39,10 @@ header{
     margin: auto;
     padding:40px;
   }
+  img{
+    margin: 40px;
+  }
+
 }
 
 
