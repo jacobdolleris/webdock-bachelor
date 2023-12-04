@@ -15,11 +15,36 @@
 
 
  <header>
-  <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
+  <h1>Configure your <u>OWN</u> VPS server with <u>YOUR</u> own cinfiguration settings</h1>
   <h2>For the best experience!</h2>
-  <img src="../assets/img/icons/Arrow.png" alt="">
+  <a href="#"><img src="../assets/img/icons/Arrow.png" alt=""></a>
   <hr>
  </header>
+
+<section style="background-color: grey; height: 800px; padding-top:100px;">
+
+<div style="background-color: darkgrey; height: 700px; width: 80%; margin: auto; display: flex; justify-content: space-evenly;">
+
+
+
+<div style="height: 100px; width: 200px; border:1px solid white;">
+</div>
+
+<div style="height:600px; width:700px; background-image: url(../assets/img/server-placeholder.png);">
+</div>
+
+<div style="height: 100px; width: 200px; border:1px solid white;">
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
 
 
 
