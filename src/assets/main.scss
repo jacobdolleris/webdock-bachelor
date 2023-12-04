@@ -30,10 +30,11 @@ h2{
 }
 
 h3{
-
+    font-weight: 100;
 }
 
 h4{
+    font-weight: 100;
 
 }
 
@@ -79,11 +80,22 @@ hr{
     padding-top:100px;
 }
 .config-section-inner{
-   
-    width: 70%; 
+    width: 80%; 
     margin: auto; 
     display: flex; 
     justify-content: space-between;
+
+    a{
+        text-decoration: none;
+        height: 100px;
+    }
+    a:hover{
+
+        .config-section-inner-option{
+            background-color:$webdock-green;
+        }
+    }
+
 }
 
 .config-section-inner-option{
@@ -92,23 +104,49 @@ hr{
     border:3px solid $teal-color;
     border-radius: 10px;
     background-color:$dark-grey-background;
+    text-align: center;
 
-    h2{
-        text-align: center;
+    h3{
+        margin-top: 10px;
     }
 }
 
 .config-ection-inner-image{
-    height:500px; 
-    width:700px; 
+    width: 70%;
+    height: 500px;
     background-image: url(../assets/img/server-placeholder.png);
     background-repeat:no-repeat;
+
+    background-position: center;
+
 }
 
 .option-midt{
-    margin-top:-200px
+margin-top: -150px;
 }
-.option-top{
 
-}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    width: 850px;
+    height: 600px;
+    background-color:$dark-grey-background;
+    border-radius: 10px;
+    border: 3px solid $orange-color;
+  
+    a{
+        margin-left: 90%;
+        background-color:$orange-color;
+        padding:1%;
+        width: 70px;
+        height: 50px;
+        border-radius: 10px;
+    }
+
+
+    
+  }
 

@@ -25,30 +25,59 @@
 
 <div class="config-section-inner">
   
-  <div class="config-section-inner-option" style="margin-left: 50px;">
-    <h2>RAM</h2>
-  </div>
+  <a href="#" @click.prevent="openModal">
+    <div class="config-section-inner-option">
+      <h2>RAM</h2>
+      <h3>Model : ########</h3>
+      <h3>Price : $$$</h3>
+    </div>
+  </a>
+  <div v-if="isModalOpen" class="modal">
+    <a href="#" @click.prevent="closeModal"> Close</a>
+      <h1>Choose RAM</h1>
+    </div>
+
+
+
+
 
   <div class="config-ection-inner-image">
   </div>
 
-  <div class="config-section-inner-option" style="margin-right: 50px;">
-    <h2>CPU</h2>
-  </div>
+  <a href="#">
+    <div class="config-section-inner-option">
+      <h2>CPU</h2>
+      <h3>Model : ########</h3>
+      <h3>Price : $$$</h3>
+    </div>
+  </a>
 </div>
 
 <div class="config-section-inner">
-  <div class="config-section-inner-option option-midt">
+  <a href="#">
+    <div class="config-section-inner-option option-midt">
     <h2>Port Speed</h2>
+    <h3>Model : ########</h3>
+    <h3>Price : $$$</h3>
   </div>
+</a>
+  
 
-  <div class="config-section-inner-option" style="margin-top:50px;">
+  <a href="#">
+    <div class="config-section-inner-option">
     <h2>DISCS</h2>
+    <h3>Model : ########</h3>
+    <h3>Price : $$$</h3>
   </div>
-
-  <div class="config-section-inner-option option-midt">
+</a>
+  
+<a href="#">
+    <div class="config-section-inner-option option-midt">
     <h2>Raid Controller</h2>
+    <h3>Model : ########</h3>
+    <h3>Price : $$$</h3>
   </div>
+</a>
 </div>
 
 
@@ -81,5 +110,27 @@ header{
 }
 
 
-
 </style>
+
+
+<script>
+export default {
+  data() {
+    return {
+      isModalOpen: false // start of closed
+    };
+  },
+  methods: {
+    openModal() {
+      // Open mudal
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      // Close
+      this.isModalOpen = false;
+    }
+  }
+};
+</script>
+
+
