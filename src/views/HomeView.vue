@@ -14,7 +14,11 @@
   <main class="content">
 
 
-  <h1>Hej fra Homeview :) </h1>
+ <header>
+  <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
+  <h2>For the best experience!</h2>
+
+ </header>
 
 
 
@@ -27,32 +31,15 @@
 
 
 <style lang="scss" scoped>
-
-.content{
-  height: 1000px;
-}
-
-h1{
-  color:yellow;
-  background-color: blue;
-  font-size:50px;
+header{
   text-align: center;
-  
-  padding: 50px;
-}
-.ignore{
-  height: 150px;
-  background-color: grey;
-
-  h2{
-    font-size: 30px;
-    text-align: center;
-    padding-top:30px;
+  h1{
+    width: 35%;
+    margin: auto;
+    padding:40px;
   }
+}
 
-}
-.footer-replacement{
-  height: 400px;;
-}
+
 
 </style>

@@ -25,33 +25,9 @@
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
-.content{
-  height: 1000px;
-}
 
-h1{
-
-  font-size:50px;
-  text-align: center;
-  
-  padding: 50px;
-}
-.ignore{
-  height: 150px;
-  background-color: grey;
-
-  h2{
-    font-size: 30px;
-    text-align: center;
-    padding-top:30px;
-  }
-
-}
-.footer-replacement{
-  height: 400px;;
-}
 
 </style>
 
