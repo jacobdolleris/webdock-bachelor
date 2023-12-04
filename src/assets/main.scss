@@ -10,6 +10,8 @@ $dark-grey-background:#2C404A;
 $grey:#666666;
 $dark-grey:#333333;
 
+
+html { scroll-behavior: smooth; } 
 //  Clear
 *{
     margin:0;
@@ -78,6 +80,10 @@ hr{
     background-color: black; 
     height: 800px; 
     padding-top:100px;
+
+        h1{
+            text-align: center;
+        }
 }
 .config-section-inner{
     width: 80%; 

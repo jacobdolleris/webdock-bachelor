@@ -12,16 +12,17 @@
  <header>
   <h1>Configure your <u>OWN</u> VPS server with <u>YOUR</u> own cinfiguration settings</h1>
   <h2>For the best experience!</h2>
-  <a href="#"><img src="../assets/img/icons/Arrow.png" alt=""></a>
-  <hr>
+  <a href="#config"><img src="../assets/img/icons/Arrow.png" alt=""></a>
+  <hr id="config">
  </header>
 
 
 
 
 
-
+ <h1 style="text-align: center; margin-top: 30px;"><u>Select your parts</u></h1>
 <section class="config-section">
+ 
 
 
 
@@ -86,7 +87,7 @@
     </div>
     </div>
 
-  <a href="#" @click.prevent="openModul4">
+  <a href="#" @click.prevent="openModul4" style="margin-top: 100px;">
     <div class="config-section-inner-option">
     <h2>DISCS</h2>
     <h3>Model : ########</h3>
@@ -94,12 +95,21 @@
   </div>
 </a>
 
+
+
 <div v-if="isModul4Open" class="modal">
     <div class="modal-inner">
       
       <h1>Choose DISCS</h1>
       <a href="#" @click.prevent="closeModul4">Close</a>
     </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 100px;">
+      <h2>Checkout</h2>
+    <a href="#config" style="margin-top: 100px;"><img src="../assets/img/icons/Arrow.png" alt=""></a>
+
+
     </div>
   
 <a href="#" @click.prevent="openModul5">
