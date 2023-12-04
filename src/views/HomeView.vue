@@ -26,7 +26,6 @@
 
 
 <div class="config-section-inner">
-  <!-- Virkene modul -->
   <div>
     <a href="#" @click.prevent="openModul">
       <div class="config-section-inner-option">
@@ -46,7 +45,6 @@
     </div>
     </div>
 
-<!-- SLUT -->
 
 
   <div class="config-ection-inner-image">
@@ -72,7 +70,7 @@
 
 
 <div class="config-section-inner">
-  <a href="#">
+  <a href="#" @click.prevent="openModul3">
     <div class="config-section-inner-option option-midt">
     <h2>Port Speed</h2>
     <h3>Model : ########</h3>
@@ -80,22 +78,44 @@
   </div>
 </a>
   
+<div v-if="isModul3Open" class="modal">
+    <div class="modal-inner">
+      
+      <h1>Choose Port Speed</h1>
+      <a href="#" @click.prevent="closeModul3">Close</a>
+    </div>
+    </div>
 
-  <a href="#">
+  <a href="#" @click.prevent="openModul4">
     <div class="config-section-inner-option">
     <h2>DISCS</h2>
     <h3>Model : ########</h3>
     <h3>Price : $$$</h3>
   </div>
 </a>
+
+<div v-if="isModul4Open" class="modal">
+    <div class="modal-inner">
+      
+      <h1>Choose DISCS</h1>
+      <a href="#" @click.prevent="closeModul4">Close</a>
+    </div>
+    </div>
   
-<a href="#">
+<a href="#" @click.prevent="openModul5">
     <div class="config-section-inner-option option-midt">
     <h2>Raid Controller</h2>
     <h3>Model : ########</h3>
     <h3>Price : $$$</h3>
   </div>
 </a>
+<div v-if="isModul5Open" class="modal">
+    <div class="modal-inner">
+      
+      <h1>Choose Raid Controller</h1>
+      <a href="#" @click.prevent="closeModul5">Close</a>
+    </div>
+    </div>
 </div>
 
 
@@ -150,16 +170,31 @@ export default {
     openModul2() {
       this.isModul2Open = true;
     },
+    openModul3() {
+      this.isModul3Open = true;
+    },
+    openModul4() {
+      this.isModul4Open = true;
+    },
+    openModul5() {
+      this.isModul5Open = true;
+    },
   
-
-
-
 
     closeModul() {
       this.isModulOpen = false;
     },
     closeModul2() {
       this.isModul2Open = false;
+    },
+    closeModul3() {
+      this.isModul3Open = false;
+    },
+    closeModul4() {
+      this.isModul4Open = false;
+    },
+    closeModul5() {
+      this.isModul5Open = false;
     }
   }
 };
