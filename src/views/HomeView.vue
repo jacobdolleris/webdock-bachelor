@@ -146,7 +146,7 @@
 header{
   text-align: center;
   h1{
-    width: 35%;
+    width: 40%;
     margin: auto;
     padding:40px;
   }
