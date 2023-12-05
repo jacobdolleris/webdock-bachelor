@@ -29,7 +29,6 @@ height: 45px;
 
   .option-title {
     width: 200px;
-    background-color: red;
     
     h3 {
     font-weight: bold;
@@ -52,5 +51,10 @@ height: 45px;
       padding-top: 10px;
     }
   }
+}
+
+.checkout-box-content-row:last-child {
+  // border-bottom-left-radius: 10px;
+  // border-bottom-right-radius: 10px;
 }
 </style>
