@@ -33,17 +33,12 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
         cost='10.000 kr'
         />
         <Checkoutboxrow
-        title='Raid Controller'
-        model='Jacob A/S'
-        cost='10.000 kr'
-        />
-        <Checkoutboxrow
         title='Port Speed'
         model='Jacob A/S'
         cost='10.000 kr'
         />
       </div>
-    </div>
+    </div><!-- Checkout Box -->
 
   </section><!-- Checkout Listing -->
 
@@ -79,7 +74,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
     .checkout-box {
       border: 1px solid white;
       border-radius: 10px;
-      height: 425px;
+      height: fit-content;
       margin-top: 3.5em;
       width: 700px;
 
@@ -101,7 +96,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
         background-color: #018971;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
-        height: 375px;
+        // height: 175px;
         width: 100%;
 
         .checkout-box-content-row {
@@ -112,7 +107,6 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
           .option-title {
             width: 200px;
-            background-color: red;
             
             h3 {
             font-weight: bold;
