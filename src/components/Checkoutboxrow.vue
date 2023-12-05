@@ -24,7 +24,7 @@
 .checkout-box-content-row {
 border: 1px solid white;
 display: flex;
-height: 45px;
+height: 65px;
 // padding-top: 15px;
 
   .option-title {
@@ -33,22 +33,23 @@ height: 45px;
     h3 {
     font-weight: bold;
     padding-left: 1em;
-    padding-top: 10px;
+    padding-top: 20px;
     }
   }
 
   .model {
     padding-left: 2em;
     p {
-      padding-top: 10px;
+      padding-top: 20px;
     }
   }
 
   .cost {
-    padding-left: 8em;
+    padding-left: 12em;
 
     p {
-      padding-top: 10px;
+      text-decoration: underline;
+      padding-top: 20px;
     }
   }
 }

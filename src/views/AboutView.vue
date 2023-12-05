@@ -54,23 +54,27 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
     </div>
 
 
-      <p>(Value changes depending on chosen selections)</p>
+      <p>(Value changes depending on chosen
+        <br>
+        selections)</p>
     </div><!-- Total Cost Box -->
-
-
-
-
 
   </section><!-- Checkout Listing -->
 
 
   <section class="content--container__checkinfo">
-    <div></div>
+    <div class="text-wrapper">
+
+      <h1>Information about <span style="color: #01A1A1">checkout</span></h1>
+      <h2>Lorem ipsum dolor sit amet consectetur <span style="color: #01A1A1; text-decoration: underline;">adipisicing elit</span> Ipsum porro repellendus illo earum eos quam!</h2>
+      <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi distinctio incidunt ipsam neque ex aliquam nostrum architecto fugit. Ullam quasi hic nostrum similique praesentium dolores voluptate reprehenderit repellendus perferendis eius.</h3>
+
+    </div>
   </section><!-- Checkout Info -->
 
 
 
-  </main>
+  </main><!-- Content Container -->
 
 
   <div class="footer-replacement ignore"> <h2>Footer</h2></div>
@@ -82,7 +86,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 @import '../assets/main.scss';
 
 .content--container {
-  background-color: #666666;
+  background-color: #2C404A;
   display: flex;
   height: 705px;
   width: 100%;
@@ -131,18 +135,18 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
     width: 700px;
     .total-cost-title {
       font-weight: bold;
-      margin-left: 0.7em;
+      // margin-left: 0.7em;
       margin-top: 1em;
     }
 
     .total-wrapper {
       display: flex;
       .total-cost {
-      // background-color: deeppink;
+      background-color: #333333;
       border: 2px solid #EE8007;
       border-radius: 10px;
       height: 60px;
-      margin-left: 0.7em;
+      // margin-left: 0.7em;
       margin-top: 1em;
       width: 275px;
 
@@ -157,7 +161,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
       background-color: #01A1A1;
       border-radius: 10px;
       height: 60px;
-      margin-left: 6em;
+      margin-left: 7.8em;
       margin-top: 1em;
       width: 275px;
 
@@ -184,8 +188,28 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
   }
 
   &__checkinfo {
-    // background-color: green;
+    padding-top: 6.5em;
     width: 50%;
+
+    .text-wrapper {
+      // background-color: #EE8007;
+      height: 500px;
+      padding-left: 3em;
+      width: 90%;
+
+      h1 {
+        padding-top: 0.2em;
+      }
+
+      h2 {
+        font-weight: 300;
+        margin-top: 1.6em;
+      }
+
+      h3 {
+        margin-top: 2em;
+      }
+    }
   }
 }
 
