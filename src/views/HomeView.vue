@@ -4,7 +4,6 @@
 
 <template>
 
-<div class="top-menu-replacement ignore"><h2>Top Menu</h2></div>
 
   <main class="content">
 

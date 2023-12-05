@@ -5,13 +5,15 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
+    <div class="top-menu-replacement ignore"><h2>Staging area</h2>
+      <router-link to="/">Go to Home</router-link> <br>
+      <router-link to="about">Go to About</router-link>
+    </div>
+    
   </header>
 <router-view />
 </template>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-}
+
 </style>

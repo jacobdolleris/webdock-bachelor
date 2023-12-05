@@ -29,7 +29,7 @@ height: 45px;
 
   .option-title {
     width: 200px;
-    background-color: red;
+
     
     h3 {
     font-weight: bold;

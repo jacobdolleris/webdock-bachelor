@@ -4,7 +4,6 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
 <template>
 
-<div class="top-menu-replacement ignore"><h2>About side</h2></div>
 
   <main class="content--container">
 
