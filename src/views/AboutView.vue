@@ -37,12 +37,17 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
         cost='10.000 kr'
         />
       </div>
+      
     </div><!-- Checkout Box -->
 
+    
   </section><!-- Checkout Listing -->
 
   <section class="content--container__checkinfo">
     <div></div>
+
+
+    
   </section><!-- Checkout Info -->
 
 
