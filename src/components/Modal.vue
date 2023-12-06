@@ -9,7 +9,7 @@
 
 <template>
   <div>
-    <a href="#" @click="openModal">
+    <a href="#" @click.prevent="openModal">
       <div class="config-section-inner-option">
         <h2>{{ btitle }}</h2>
         <h3>{{ bmodel }}</h3>
@@ -22,7 +22,7 @@
   <div v-if="isModalOpen" class="modal">
     <div class="modal-content">
       <h1>{{ mtitle }}</h1>
-      <a href="#" @click="closeModal">&times;</a>
+      <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
     </div><!-- Modal -->
   </template>
@@ -66,16 +66,11 @@ $dark-grey:#333333;
     border: 3px solid $orange-color;
   
     a{
-        background-color:$orange-color;
-        padding:1%;
         font-size: 50px;
-        width: 70px;
-        height: 30px;
-        border-radius: 10px;
-        float: right;
+        margin-top: -20px;
 
         &:hover{
-            background-color: #cd6b03;
+          color: $orange-color;
         }
     }
 
