@@ -66,7 +66,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
     <div class="text-wrapper">
 
       <h1>Information about <span style="color: #01A1A1">checkout</span></h1>
-      <h2>Lorem ipsum dolor sit amet consectetur <span style="color: #01A1A1; text-decoration: underline;">adipisicing elit</span> Ipsum porro repellendus illo earum eos quam!</h2>
+      <h2>Lorem ipsum dolor sit amet conectetur <span style="color: #01A1A1; text-decoration: underline;">adipisicing elit</span> Ipsum porro repellendus illo earum eos quam!</h2>
       <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi distinctio incidunt ipsam neque ex aliquam nostrum architecto fugit. Ullam quasi hic nostrum similique praesentium dolores voluptate reprehenderit repellendus perferendis eius.</h3>
 
     </div>
