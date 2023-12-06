@@ -84,7 +84,7 @@
 
 <div class="config-section-inner">
   <a href="#" @click.prevent="openModul3">
-    <div class="config-section-inner-option option-midt">
+    <div class="config-section-inner-option">
     <h2>Port Speed</h2>
     <h3>Model : ########</h3>
     <h3>Price : $$$</h3>
@@ -99,7 +99,7 @@
     </div>
     </div>
 
-  <a href="#" @click.prevent="openModul4" style="margin-top: 100px;">
+  <a href="#" @click.prevent="openModul4">
     <div class="config-section-inner-option">
     <h2>DISCS</h2>
     <h3>Model : ########</h3>
@@ -117,27 +117,13 @@
     </div>
     </div>
 
-    <div style="text-align: center; margin-top: 100px;">
+
+
+
+    </div>
+    <div style="text-align: center;">
       <h2>Checkout</h2>
-    <a href="#config" style="margin-top: 100px;"><img src="../assets/img/icons/Arrow.png" alt=""></a>
-
-
-    </div>
-  
-<a href="#" @click.prevent="openModul5">
-    <div class="config-section-inner-option option-midt">
-    <h2>Raid Controller</h2>
-    <h3>Model : ########</h3>
-    <h3>Price : $$$</h3>
-  </div>
-</a>
-<div v-if="isModul5Open" class="modal">
-    <div class="modal-inner">
-      
-      <h1>Choose Raid Controller</h1>
-      <a href="#" @click.prevent="closeModul5">Close</a>
-    </div>
-    </div>
+    <a href="#config" style="margin-top: 100px;"><img src="../assets/img/icons/Arrow.png" alt=""></a>  
 </div>
 
 
