@@ -64,14 +64,17 @@ import Modal from '../components/Modal.vue';
 
     </div>
     <div style="text-align: center;">
-      <h2>Checkout</h2>
-    <a href="#config" style="margin-top: 100px;"><img src="../assets/img/icons/Arrow.png" alt=""></a>  
+      <h2 style="margin-bottom: 20px;">Checkout</h2>
+    <a href="#checkout"><img src="../assets/img/icons/Arrow.png" alt=""></a>  
 </div>
 
+</section>
+<section>
+
+  <hr id="checkout" style="margin-top: 50px;">
 
 
 </section>
-
 
   </main>
 

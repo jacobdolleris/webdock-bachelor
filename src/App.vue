@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <template>
   <header>
     <div class="top-menu-replacement ignore"><h2>Staging area</h2>
-      <router-link to="/">Go to Home</router-link> <br>
+      <router-link to="/" style="margin-right: 30px;">Go to Home</router-link>
       <router-link to="about">Go to About</router-link>
     </div>
     
