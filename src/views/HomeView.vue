@@ -18,9 +18,22 @@
 
 
 
-
- <h1 style="text-align: center; margin-top: 30px;"><u>Choose Cabinet:</u></h1>
+<div class="DD-box">
+  <div class="dropdown">
+  <button class="dropdown-btn">Choose Carbinet</button>
+  <div class="dropdown-content">
+  <a href="#">Carbinet 1</a>
+  <a href="#">Carbinet 2</a>
+  <a href="#">Carbinet 3</a>
+  </div>
+</div>
+</div>
 <section class="config-section">
+
+
+
+
+
  
 
 
