@@ -2,7 +2,9 @@
     defineProps({
         title: String,
         model: String,
+        number: String,
         cost: String
+        
     })
 </script>
 
@@ -14,9 +16,13 @@
           <div class="model">
           <p>{{ model }}</p>
         </div>
+        <div class="number">
+        <p>{{ number }}</p>
+      </div>
         <div class="cost">
         <p>{{ cost }}</p>
       </div>
+      
         </div><!-- Checkbox Row -->
 </template>
 
@@ -24,33 +30,43 @@
 .checkout-box-content-row {
 border: 1px solid white;
 display: flex;
+text-align: left;
+justify-content: space-between;
 height: 65px;
 // padding-top: 15px;
 
   .option-title {
-    width: 200px;
+    width: 100px;
+    margin-left: 1em;
     
     h3 {
     font-weight: bold;
-    padding-left: 1em;
     padding-top: 20px;
     }
   }
 
   .model {
-    padding-left: 2em;
+    text-align: left;
+
     p {
       padding-top: 20px;
     }
   }
 
   .cost {
-    padding-left: 12em;
+
 
     p {
       text-decoration: underline;
       padding-top: 20px;
+      margin-right: 2em;
     }
+  }
+
+  .number {
+    text-decoration: underline;
+      padding-top: 20px;
+      margin-right: 2em;
   }
 }
 

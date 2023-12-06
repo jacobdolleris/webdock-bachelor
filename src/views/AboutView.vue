@@ -17,24 +17,34 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
       <div class="checkout-box-content">
         <Checkoutboxrow
+        title='Carbinet'
+        model='STeFaN Model Q'
+        cost='12.500 kr'
+        number='2 stks'
+        />
+        <Checkoutboxrow
         title='CPU'
-        model='Jacob A/S'
+        model='Jacob er den bedste A/S'
         cost='10.000 kr'
+        number='2 stks'
         />
         <Checkoutboxrow
         title='RAM'
-        model='Jacob A/S'
-        cost='10.000 kr'
+        model='Stefmeister A/S'
+        cost='1058.500 kr'
+        number='2 stks'
         />
         <Checkoutboxrow
         title='DISCS'
-        model='Jacob A/S'
-        cost='10.000 kr'
+        model='Team Jacob'
+        cost='3500 kr'
+        number='2 stks'
         />
         <Checkoutboxrow
         title='Port Speed'
-        model='Jacob A/S'
+        model='Dette er en model portspeed som er meget hurtig'
         cost='10.000 kr'
+        number='2 stks'
         />
       </div>
     </div><!-- Checkout Box -->
