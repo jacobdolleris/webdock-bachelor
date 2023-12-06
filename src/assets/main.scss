@@ -71,7 +71,18 @@ hr{
     background-color: black;
   }
 
-
+  header{
+    text-align: center;
+    h1{
+      width: 40%;
+      margin: auto;
+      padding:40px;
+    }
+    img{
+      margin: 40px;
+    }
+  
+  }
 
 
 
@@ -121,7 +132,7 @@ hr{
 .config-ection-inner-image{
     width: 70%;
     height: 500px;
-    background-image: url(../assets/img/server-placeholder.png);
+    background-image: url(/src/assets/img/server-placeholder.png);
     background-repeat:no-repeat;
 
     background-position: center;
@@ -215,3 +226,131 @@ margin-top: -150px;
     border-radius: 10px 10px 0px 0;
   }
 
+
+  .content--container {
+    background-color: #2C404A;
+    display: flex;
+    height: 705px;
+    width: 100%;
+  
+    &__checklist {
+      // background-color: red;
+      justify-content: center;
+      padding-top: 6.5em;
+      width: 50%;
+  
+      .checkout-box {
+        border: 1px solid white;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: fit-content;
+        margin: 0 auto;
+        width: 700px;
+  
+        .checkout-box-header {
+          background-color: #EE8007;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          height: 50px;
+          width: 100%;
+  
+          h2 {
+            font-weight: bold;
+            padding-left: 0.7em;
+            padding-top: 8px;
+          }
+        }
+  
+        .checkout-box-content {
+          background-color: #018971;
+          // border-bottom-left-radius: 10px;
+          // border-bottom-right-radius: 10px;
+          // height: 175px;
+          width: 100%;
+        }
+      }
+  
+    .total-cost-box {
+      // background-color: green;
+      margin: 0 auto;
+      margin-top: 5em;
+      width: 700px;
+      .total-cost-title {
+        font-weight: bold;
+        // margin-left: 0.7em;
+        margin-top: 1em;
+      }
+  
+      .total-wrapper {
+        display: flex;
+        .total-cost {
+        background-color: #333333;
+        border: 2px solid #EE8007;
+        border-radius: 10px;
+        height: 60px;
+        // margin-left: 0.7em;
+        margin-top: 1em;
+        width: 275px;
+  
+        h3 {
+          font-size: 30px;
+          padding-top: 10px;
+          text-align: center;
+        }
+      }
+  
+      .checkout-btn {
+        background-color: #01A1A1;
+        border-radius: 10px;
+        height: 60px;
+        margin-left: 9em;
+        margin-top: 1em;
+        width: 275px;
+  
+        h3 {
+          font-size: 30px;
+          font-weight: bold;
+          padding-top: 10px;
+          text-align: center;
+        }
+      }
+      .checkout-btn:hover {
+        cursor: pointer;
+        background-color: #018585;
+      }
+      }
+  
+      p {
+        margin-top: 0.5em;
+      }
+    }
+  
+  
+  
+    }
+  
+    &__checkinfo {
+      padding-top: 6.5em;
+      width: 50%;
+  
+      .text-wrapper {
+        // background-color: #EE8007;
+        height: 500px;
+        padding-left: 3em;
+        width: 90%;
+  
+        h1 {
+          padding-top: 0.2em;
+        }
+  
+        h2 {
+          font-weight: 300;
+          margin-top: 1.6em;
+        }
+  
+        h3 {
+          margin-top: 2em;
+        }
+      }
+    }
+  }

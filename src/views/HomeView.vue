@@ -153,23 +153,7 @@
 </template>
 
 
-<style lang="scss" scoped>
-  @import '../assets/main.scss';
-header{
-  text-align: center;
-  h1{
-    width: 40%;
-    margin: auto;
-    padding:40px;
-  }
-  img{
-    margin: 40px;
-  }
 
-}
-
-
-</style>
 
 
 <script>
