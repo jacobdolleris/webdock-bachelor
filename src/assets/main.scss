@@ -18,6 +18,7 @@ html { scroll-behavior: smooth; }
     padding:0;
     font-family: 'Raleway', sans-serif;
     color: white;
+    box-sizing: border-box;
     // background-color: black;
 }
 // Rules
@@ -28,11 +29,11 @@ h1{
 
 h2{
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 300;
 }
 
 h3{
-    font-weight: 100;
+    font-weight: 200;
 }
 
 h4{
