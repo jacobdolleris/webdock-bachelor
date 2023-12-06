@@ -161,7 +161,7 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
       background-color: #01A1A1;
       border-radius: 10px;
       height: 60px;
-      margin-left: 7.8em;
+      margin-left: 9em;
       margin-top: 1em;
       width: 275px;
 
