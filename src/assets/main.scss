@@ -68,13 +68,16 @@ hr{
 
   .content{
     height: 1500px;
-    background-color: black;
+    background-image: url(/src/assets/img/awbck.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   header{
     text-align: center;
+   
     h1{
-      width: 40%;
+      width: 50%;
       margin: auto;
       padding:40px;
     }
@@ -89,7 +92,7 @@ hr{
 
 // Midterstykke
 .config-section{
-    background-color: black; 
+ 
     height: 800px; 
     padding-top:100px;
 
