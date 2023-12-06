@@ -37,32 +37,18 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
         cost='10.000 kr'
         />
       </div>
+      
     </div><!-- Checkout Box -->
 
-
-
-    <div class="total-cost-box">
-      <h2 class="total-cost-title">Total Cost</h2>
-
-    <div class="total-wrapper">
-      <div class="total-cost">
-      <h3>##.##.##,## $</h3>
-      </div>
-      <div class="checkout-btn">
-        <h3>Checkout</h3>
-      </div>
-    </div>
-
-
-      <p>(Value changes depending on chosen
-        <br>
-        selections)</p>
-    </div><!-- Total Cost Box -->
-
+    
   </section><!-- Checkout Listing -->
 
 
   <section class="content--container__checkinfo">
+    <div></div>
+
+
+    
     <div class="text-wrapper">
 
       <h1>Information about <span style="color: #01A1A1">checkout</span></h1>

@@ -19,7 +19,7 @@
 
 
 
- <h1 style="text-align: center; margin-top: 30px;"><u>Select your parts</u></h1>
+ <h1 style="text-align: center; margin-top: 30px;"><u>Choose Cabinet:</u></h1>
 <section class="config-section">
  
 
