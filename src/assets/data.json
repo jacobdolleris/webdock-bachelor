@@ -1,5 +1,6 @@
 {
-  "server_model": {
+  "server_model": 
+  {
     "name": "Poweredge r630",
     "description": "Foo",
     "description_long": "Foobar",
