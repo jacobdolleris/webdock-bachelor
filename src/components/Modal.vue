@@ -24,10 +24,12 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
+
     <div style="border: 1px solid white;">
       <h1>hej</h1>
-    
     </div>
+
+    
     </div><!-- Modal -->
   </template>
   
