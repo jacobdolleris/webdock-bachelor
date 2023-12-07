@@ -24,14 +24,17 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
+    <div><h1>hej</h1></div>
     </div><!-- Modal -->
   </template>
   
 <script>
+import data from '../assets/data.json';
 export default {
   data(){
     return {
-      isModalOpen: false
+      isModalOpen: false,
+      server: data
     };
   },
   methods: {
@@ -42,6 +45,7 @@ export default {
       this.isModalOpen = false;
     }
   }
+
 }
 </script>
   

@@ -1,14 +1,7 @@
 <script setup>
 import Modal from '../components/Modal.vue';
-import data from '../assets/data.json';
 
-export default {
-  data() {
-    return {
-      server: data,
-    };
-  },
-};
+
 </script>
 
 <template>
