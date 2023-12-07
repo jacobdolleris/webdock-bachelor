@@ -1,0 +1,101 @@
+{
+  "server_model": {
+    "name": "Poweredge r630",
+    "description": "Foo",
+    "description_long": "Foobar",
+    "images": [
+      "https//productimages/jpeg1",
+      "https//productimages/jpeg2",
+      "https//productimages/jpeg3"
+    ]
+  },
+  "components": {
+    "disks": {
+      "description": "Poweredge r630 supports up to 12 SATA drives or 4 Nvme Drives and 8 Sata drives. Nvme Speeds are limited to PCie 3.0",
+      "max": 12,
+      "min": 1,
+      "sata_allowed": true,
+      "sata_max": 12,
+      "nvme_allowed": true,
+      "nvme_max": 4,
+      "user_selectable_options": [
+         {
+          "model": "Samsung EVO 870 1TB",
+          "capacity": "1",
+          "unit": "TB",
+          "ean": "samsung970evo1tb-2344",
+          "price_eur_cent": 1254,
+          "price_usd_cent": 1254,
+          "price_dkk_cent": 1254,
+           "in_stock": 8,
+           "lead_time_days": 3
+        },
+        {
+          "model": "Samsung EVO 870 2TB",
+          "capacity": "2",
+          "unit": "TB",
+          "ean": "samsung970evo2tb-2344",
+          "price_eur_cent": 2254,
+          "price_usd_cent": 2254,
+          "price_dkk_cent": 2254,
+          "in_stock": 15,
+           "lead_time_days": 3
+        }
+      ]
+    },
+    "memory": {
+      "description": "This server supports up to 24x DDR4 PC4-3200 DIMM modules for up to 2TB of RAM.",
+      "max": 24,
+      "min": 2,
+      "generation": "DDR4",
+      "user_selectable_options": [
+         {
+          "model": "Samsung PC4-3200",
+          "capacity": "32",
+          "unit": "GB",
+          "ean": "samsungddr432gbpc43200",
+          "price_eur_cent": 1254,
+          "price_usd_cent": 1254,
+          "price_dkk_cent": 1254,
+           "in_stock": 0,
+           "lead_time_days": 3
+        }
+      ]
+    },
+    "cpu": {
+      "description": "This server supports up 2x Intel Xeon 13th or 14th generation CPUs with a max TDP of 280 Watts",
+      "max": 2,
+      "min": 1,
+      "user_selectable_options": [
+         {
+          "model": "Intel Xeon E5-2683 v4",
+          "cores": 24,
+          "threads": 48,
+          "TDP_W": "240",
+          "clock_base": "2.0 Ghz",
+          "clock_boost": "2.8 Ghz",
+          "ean": "intelxeone52683v4",
+          "price_eur_cent": 1254,
+          "price_usd_cent": 1254,
+          "price_dkk_cent": 1254,
+           "in_stock": 4,
+           "lead_time_days": 3
+        }
+      ]
+    },
+    "network": {
+      "description": "All Webdock dedicated servers of this model get a Dual 10Gbit network card installed. However, your port speed will be limited to what you select below.",
+      "max": 10,
+      "min": 1,
+      "included_for_free": 1,
+      "unit": "Gbit/Sec",
+      "additional_gbit_cost_eur_cent": 4000,
+      "additional_gbit_cost_usd_cent": 4000,
+      "additional_gbit_cost_dkk_cent": 4000
+    },
+    "raid_controller": {
+      "description": "Webdock Poweredge r630 Series dedicated servers come with an HA345 RAID controller with full sipport for RAID 0/1/2/3/4/5.",
+      "datasheet_link": "https://i.dell.com/sites/csdocuments/Shared-Content_data-Sheets_Documents/en/us/dellemc-poweredge-raid-controller-h345-datasheet.pdf"
+    }
+  }
+}
