@@ -25,7 +25,7 @@
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
 
-    <div v-for="(value, key) in server.components.disks.user_selectable_options" :key="key" style="border: 1px solid white;">
+    <div v-for="(value, key) in listItems.components.disks.user_selectable_options" :key="key" style="border: 1px solid white;">
       <h2>Navn {{ value.model }}</h2> <br>
       Plads {{ value.capacity }} <br>
       Pris {{ value.price_dkk_cent }} kr
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       isModalOpen: false,
-      userSelectableOptions: [],
+      listItems: [],
     };
   },
   mounted() {
@@ -57,8 +57,8 @@ export default {
     async loadData() {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
-        const data = await response.json();
-        this.userSelectableOptions = data.user_selectable_options;
+        const finalRes = await response.json();
+        this.listItems = finalRes;
       } catch (error) {
         console.error('Fejl ved indlæsning af JSON-data:', error);
       }
