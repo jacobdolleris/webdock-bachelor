@@ -13,8 +13,10 @@ export default {
 <template>
     <div>
       <p v-for="(value, key) in server.components.disks.user_selectable_options" :key="key">
-        {{ key }}: {{ value }}
-      </p>
+      Navn {{ value.model }} <br>
+      Plads {{ value.capacity }} <br>
+      Pris {{ value.price_dkk_cent }} kr
+    </p>
     </div>
   </template>
   

@@ -1,5 +1,14 @@
 <script setup>
 import Modal from '../components/Modal.vue';
+import data from '../assets/data.json';
+
+export default {
+  data() {
+    return {
+      server: data,
+    };
+  },
+};
 </script>
 
 <template>
@@ -87,55 +96,6 @@ import Modal from '../components/Modal.vue';
 
 
 
-<script>
-// export default {
-//   data() {
-    
-    
-//     return {
-//       isModulOpen: false,
-//       isModul2Open:false,
-//       isModul3Open:false,
-//       isModul4Open:false,
-//       isModul5Open:false
-//     };
-//   },
-//   methods: {
-//     openModul() {
-//       this.isModulOpen = true;
-//     },
-//     openModul2() {
-//       this.isModul2Open = true;
-//     },
-//     openModul3() {
-//       this.isModul3Open = true;
-//     },
-//     openModul4() {
-//       this.isModul4Open = true;
-//     },
-//     openModul5() {
-//       this.isModul5Open = true;
-//     },
-  
-
-//     closeModul() {
-//       this.isModulOpen = false;
-//     },
-//     closeModul2() {
-//       this.isModul2Open = false;
-//     },
-//     closeModul3() {
-//       this.isModul3Open = false;
-//     },
-//     closeModul4() {
-//       this.isModul4Open = false;
-//     },
-//     closeModul5() {
-//       this.isModul5Open = false;
-//     }
-//   }
-// };
-</script>
 
 
 
