@@ -36,7 +36,6 @@
   </template>
   
 <script>
-// import data from 'https://webdock.io/en/platform_data/getConfigurationData';
 export default {
   data() {
     return {
@@ -54,6 +53,7 @@ export default {
     closeModal() {
       this.isModalOpen = false;
     },
+
     async loadData() {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
@@ -64,13 +64,6 @@ export default {
       }
     },
   },
-  watch: {
-    isModalOpen(newVal) {
-      if(newVal) {
-        this.closeModal();
-      }
-    }
-  }
 };
 </script>
   
