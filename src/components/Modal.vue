@@ -64,6 +64,13 @@ export default {
       }
     },
   },
+  watch: {
+    isModalOpen(newVal) {
+      if(newVal) {
+        this.closeModal();
+      }
+    }
+  }
 };
 </script>
   
