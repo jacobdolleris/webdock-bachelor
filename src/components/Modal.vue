@@ -38,15 +38,15 @@
 <script>
 // import data from 'https://webdock.io/en/platform_data/getConfigurationData';
 export default {
-  data(){
+  data() {
     return {
       isModalOpen: false,
       userSelectableOptions: [],
     };
   },
   mounted() {
-      this.loadData();
-    },
+    this.loadData();
+  },
   methods: {
     openModal() {
       this.isModalOpen = true;
@@ -58,14 +58,13 @@ export default {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
         const data = await response.json();
-        this.server = data.user_selectable_options;
+        this.userSelectableOptions = data.user_selectable_options;
       } catch (error) {
-        console.error('Sut min pik', error);
+        console.error('Fejl ved indlæsning af JSON-data:', error);
       }
-    }
-  }
-
-}
+    },
+  },
+};
 </script>
   
 <style lang="scss" scoped>
