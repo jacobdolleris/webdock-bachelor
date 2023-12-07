@@ -25,8 +25,10 @@
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
 
-    <div style="border: 1px solid white;">
-      <h1>hej</h1>
+    <div v-for="(value, key) in server.components.disks.user_selectable_options" :key="key" style="border: 1px solid white;">
+      <h2>Navn {{ value.model }}</h2> <br>
+      Plads {{ value.capacity }} <br>
+      Pris {{ value.price_dkk_cent }} kr
     </div>
 
     
@@ -34,20 +36,32 @@
   </template>
   
 <script>
-import data from '../assets/data.json';
+// import data from 'https://webdock.io/en/platform_data/getConfigurationData';
 export default {
   data(){
     return {
       isModalOpen: false,
-      server: data
+      userSelectableOptions: [],
     };
   },
+  mounted() {
+      this.loadData();
+    },
   methods: {
     openModal() {
       this.isModalOpen = true;
     },
     closeModal() {
       this.isModalOpen = false;
+    },
+    async loadData() {
+      try {
+        const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
+        const data = await response.json();
+        this.server = data.user_selectable_options;
+      } catch (error) {
+        console.error('Sut min pik', error);
+      }
     }
   }
 
