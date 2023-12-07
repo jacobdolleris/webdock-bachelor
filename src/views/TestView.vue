@@ -7,13 +7,6 @@ export default {
       server: data,
     };
   },
-  methods: {
-    formatData(options) {
-      return JSON.stringify(options, null, 2)
-        .replace(/["{}]/g, '') // Fjern dobbelte anførselstegn og krøllede parenteser
-        .replace(/,/g, ', '); // Tilføj et mellemrum efter kommaer
-    },
-  },
 };
 </script>
 
