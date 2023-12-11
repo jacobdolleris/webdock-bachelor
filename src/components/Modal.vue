@@ -3,7 +3,10 @@
         btitle: String,
         bmodel: String,
         bprice: String,
-        mtitle: String
+        mtitle: String,
+        vmodel: String,
+        vcapacity: String,
+        vprice: Number
     })
 </script>
 
@@ -14,6 +17,7 @@
         <h2>{{ btitle }}</h2>
         <h3>{{ bmodel }}</h3>
         <h3>{{ bprice }}</h3>
+
       </div>
     </a>
 
@@ -24,13 +28,21 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
+    <div>
+      <h2>Navn {{ vmodel }}</h2> <br>
+      Plads {{ vcapacity }} <br>
+      Pris {{ vprice }} kr
 
-    <div v-for="(value, key) in listItems.components.disks.user_selectable_options" :key="key" style="border: 1px solid white;">
+    </div>
+
+<!-- Gammelt virkene
+
+    <div v-for="(value, key) in listItems.components.memory.user_selectable_options" :key="key" style="border: 1px solid white;">
       <h2>Navn {{ value.model }}</h2> <br>
       Plads {{ value.capacity }} <br>
       Pris {{ value.price_dkk_cent }} kr
     </div>
-
+  -->
     
     </div><!-- Modal -->
   </template>

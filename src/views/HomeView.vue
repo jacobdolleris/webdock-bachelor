@@ -1,9 +1,4 @@
-<script setup>
-import Modal from '../components/Modal.vue';
 
-
-
-</script>
 
 <template>
 
@@ -28,29 +23,38 @@ import Modal from '../components/Modal.vue';
   </div>
 </div>
 </div>
+
 <section class="config-section">
 
-<div class="config-section-inner">
+  <div class="config-section-inner">
+    <div v-if="listItems.components && listItems.components.memory">
+      <Modal
+        v-for="(value, key) in listItems.components.memory.user_selectable_options"
+        :key="key"
+        :btitle="'RAM'"
+        :bmodel="'Model: Stefan'"
+        :bprice="'Price: 1000 $'"
+        :mtitle="'Choose RAM'"
+        :vmodel="value.model"
+        :vcapacity="value.capacity"
+        :vprice="value.price_dkk_cent"
+      />
+    </div>
 
-  <Modal
-  btitle='RAM'
-  bmodel='Model: Stefan'
-  bprice='Price: 1000 $'
-  mtitle='Choose RAM'
-  />
+
 
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
-
   <Modal
   btitle='CPU'
   bmodel='Model: Jacob'
   bprice='Price: 2000 $'
   mtitle='Choose CPU'
   />
-</div>
 
-<div class="config-section-inner">
+  </div>
+
+  <div class="config-section-inner">
   <Modal
   btitle='Port Speed'
   bmodel='Model: Arni'
@@ -85,6 +89,26 @@ import Modal from '../components/Modal.vue';
   <div class="footer-replacement ignore"> <h2>Footer</h2></div>
 
 </template>
+
+
+
+<script setup>
+import { ref, onMounted } from 'vue';
+import Modal from '../components/Modal.vue';
+
+const listItems = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
+    const finalRes = await response.json();
+    listItems.value = finalRes;
+  } catch (error) {
+    console.error('Fejl ved indlæsning af JSON-data:', error);
+  }
+});
+</script>
+
 
 
 
