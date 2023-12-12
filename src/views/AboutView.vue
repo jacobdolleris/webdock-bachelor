@@ -18,31 +18,31 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
       <div class="checkout-box-content">
         <Checkoutboxrow
         title='Carbinet'
-        model='STeFaN Model Q'
+        model='Model 1'
         cost='12.500 kr'
         number='2 stks'
         />
         <Checkoutboxrow
         title='CPU'
-        model='Jacob er den bedste A/S'
+        model='model 2'
         cost='10.000 kr'
         number='2 stks'
         />
         <Checkoutboxrow
         title='RAM'
-        model='Stefmeister A/S'
+        model='model 3'
         cost='1058.500 kr'
         number='2 stks'
         />
         <Checkoutboxrow
         title='DISCS'
-        model='Team Jacob'
+        model='model 4'
         cost='3500 kr'
         number='2 stks'
         />
         <Checkoutboxrow
         title='Port Speed'
-        model='Dette er en model portspeed som er meget hurtig'
+        model='model 5'
         cost='10.000 kr'
         number='2 stks'
         />

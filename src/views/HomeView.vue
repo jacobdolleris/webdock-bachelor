@@ -45,16 +45,46 @@
 
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
-  <Modal
-  btitle='CPU'
-  bmodel='Model: Jacob'
-  bprice='Price: 2000 $'
-  mtitle='Choose CPU'
-  />
+  <div v-if="listItems.components && listItems.components.cpu">
+      <Modal
+        v-for="(value, key) in listItems.components.cpu.user_selectable_options"
+        :key="key"
+        :btitle="'CPU'"
+        :bmodel="'Model: Stefan'"
+        :bprice="'Price: 1000 $'"
+        :mtitle="'Choose CPU'"
+        :vmodel="value.model"
+        :vcapacity="value.capacity"
+        :vprice="value.price_dkk_cent"
+      />
+    </div>
 
   </div>
 
   <div class="config-section-inner">
+
+    
+    <div v-if="listItems.components && listItems.components.cpu">
+      <Modal
+        v-for="(value, key) in listItems.components.cpu.user_selectable_options"
+        :key="key"
+        :btitle="'CPU'"
+        :bmodel="'Model: Stefan'"
+        :bprice="'Price: 1000 $'"
+        :mtitle="'Choose CPU'"
+        :vmodel="value.model"
+        :vcapacity="value.capacity"
+        :vprice="value.price_dkk_cent"
+      />
+    </div>
+
+
+
+
+
+    
+
+
   <Modal
   btitle='Port Speed'
   bmodel='Model: Arni'
@@ -62,12 +92,8 @@
   mtitle='Choose Port Speed'
   />
 
-  <Modal
-  btitle='DISCS'
-  bmodel='Model: Søren'
-  bprice='Price: 50 $'
-  mtitle='Choose DISCS'
-  />
+
+
 
     </div>
     <div style="text-align: center;">
