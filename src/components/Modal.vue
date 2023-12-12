@@ -4,10 +4,8 @@
         bmodel: String,
         bprice: String,
         mtitle: String,
-        vmodel: String,
-        vcapacity: String,
-        vprice: Number
-    })
+        array: Array
+      })
 </script>
 
 <template>
@@ -28,10 +26,10 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
-    <div>
-      <h2>Navn {{ vmodel }}</h2> <br>
-      Plads {{ vcapacity }} <br>
-      Pris {{ vprice }} kr
+    <div v-for="(item, key) in array" :key="key">
+      <h2>Navn {{ item.model }}</h2> <br>
+      Plads {{ item.capacity }} <br>
+      Pris {{ item.price_dkk_cent }} kr
 
     </div>
 

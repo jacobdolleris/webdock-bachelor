@@ -29,15 +29,12 @@
   <div class="config-section-inner">
     <div v-if="listItems.components && listItems.components.memory">
       <Modal
-        v-for="(value, key) in listItems.components.memory.user_selectable_options"
         :key="key"
         :btitle="'RAM'"
         :bmodel="'Model: Stefan'"
         :bprice="'Price: 1000 $'"
         :mtitle="'Choose RAM'"
-        :vmodel="value.model"
-        :vcapacity="value.capacity"
-        :vprice="value.price_dkk_cent"
+        :array="listItems.components.memory.user_selectable_options"
       />
     </div>
 
@@ -45,17 +42,13 @@
 
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
-  <div v-if="listItems.components && listItems.components.cpu">
+  <div v-if="listItems.components && listItems.components.disks">
       <Modal
-        v-for="(value, key) in listItems.components.cpu.user_selectable_options"
-        :key="key"
-        :btitle="'CPU'"
+        :btitle="'Disks'"
         :bmodel="'Model: Stefan'"
         :bprice="'Price: 1000 $'"
         :mtitle="'Choose CPU'"
-        :vmodel="value.model"
-        :vcapacity="value.capacity"
-        :vprice="value.price_dkk_cent"
+        :array="listItems.components.disks.user_selectable_options"
       />
     </div>
 
@@ -66,15 +59,12 @@
     
     <div v-if="listItems.components && listItems.components.cpu">
       <Modal
-        v-for="(value, key) in listItems.components.cpu.user_selectable_options"
         :key="key"
         :btitle="'CPU'"
         :bmodel="'Model: Stefan'"
         :bprice="'Price: 1000 $'"
         :mtitle="'Choose CPU'"
-        :vmodel="value.model"
-        :vcapacity="value.capacity"
-        :vprice="value.price_dkk_cent"
+        :array="listItems.components.cpu.user_selectable_options"
       />
     </div>
 
@@ -82,16 +72,16 @@
 
 
 
-    
-
-
-  <Modal
-  btitle='Port Speed'
-  bmodel='Model: Arni'
-  bprice='Price: 500 $'
-  mtitle='Choose Port Speed'
-  />
-
+    <div v-if="listItems.components && listItems.components.network">
+      <Modal
+        :key="key"
+        :btitle="'Port Speed'"
+        :bmodel="'Model: Arni'"
+        :bprice="'Price: 500 $'"
+        :mtitle="'Choose Port Speed'"
+        :array="listItems.components.network.user_selectable_options"
+      />
+    </div>
 
 
 
