@@ -26,12 +26,17 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
-    <div v-for="(item, key) in array" :key="key">
-      <h2>Navn {{ item.model }}</h2> <br>
-      Plads {{ item.capacity }} <br>
-      Pris {{ item.price_dkk_cent }} kr
+    <div v-for="(item, key) in array" :key="key" class="modal-inner">
+      <a href="#">
+      <h2>Model: {{ item.model }}</h2> 
+      <h2>Capacity: {{ item.capacity }} <br></h2> 
+      <h2>Pris: {{ item.price_dkk_cent }} kr</h2> 
 
+      </a>
+     
     </div>
+    <button class="accept-btn" @click="closeModal">Accept</button>
+    <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
 
 <!-- Gammelt virkene
 
@@ -93,7 +98,7 @@ $dark-grey:#333333;
     padding: 20px;
     width: 850px;
     height: 600px;
-    background-color:$dark-grey-background;
+    background-color:$dark-grey;
     border-radius: 10px;
     border: 3px solid $orange-color;
   
@@ -109,6 +114,41 @@ $dark-grey:#333333;
 .modal-content{
     display: flex;
     justify-content: space-between;
+}
+
+.modal-inner{
+  border: 3px solid $teal-color;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: $dark-grey-background;
+  
+
+  &:hover{
+    background-color: $webdock-green;
+
+  }
+}
+
+.accept-btn{
+  background-color: $dark-green;
+  padding: 20px;
+  font-size: 25px;
+  border: none;
+  border-radius: 10px;
+
+  &:hover{
+    background-color: $webdock-green;
+  }
+}
+
+.cancel-btn{
+  background-color: red;
+  margin-left: 20px;
+
+  &:hover{
+    background-color: darkred;
+  }
 }
     
   }// Modal
