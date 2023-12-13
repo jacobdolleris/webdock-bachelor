@@ -39,6 +39,12 @@
     <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
     
     </div>
+
+    <div v-if="selectedData" class="selected-data">
+        <h2>Selected Model: {{ selectedData.model }}</h2>
+        <h2>Selected Capacity: {{ selectedData.capacity }} <br></h2>
+        <h2>Selected Pris: {{ selectedData.price_dkk_cent }} kr</h2>
+      </div>
   </template>
   
 <script>
@@ -48,6 +54,7 @@ export default {
       isModalOpen: false,
       listItems: [],
       selectedIndex: null,
+      selectedData:null,
     };
   },
   mounted() {
@@ -68,6 +75,9 @@ export default {
       if (this.selectedIndex !== null) {
         const selectedData = this.array[this.selectedIndex];
         console.log('Selected Data:', selectedData);
+        this.selectedData = selectedData;
+      } else {
+        console.log('No item selected.');
       }
     },
     async loadData() {
