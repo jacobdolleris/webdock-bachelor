@@ -26,8 +26,8 @@
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
-    <div v-for="(item, key) in array" :key="key" class="modal-inner">
-      <a href="#">
+    <div v-for="(item, key) in array" :key="key" :class="{ 'modal-inner': true, 'active': key === selectedIndex }">
+      <a href="#" class="Choose-option" @click.prevent="setActiveIndex(key)">
       <h2>Model: {{ item.model }}</h2> 
       <h2>Capacity: {{ item.capacity }} <br></h2> 
       <h2>Pris: {{ item.price_dkk_cent }} kr</h2> 
@@ -37,17 +37,8 @@
     </div>
     <button class="accept-btn" @click="closeModal">Accept</button>
     <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
-
-<!-- Gammelt virkene
-
-    <div v-for="(value, key) in listItems.components.memory.user_selectable_options" :key="key" style="border: 1px solid white;">
-      <h2>Navn {{ value.model }}</h2> <br>
-      Plads {{ value.capacity }} <br>
-      Pris {{ value.price_dkk_cent }} kr
-    </div>
-  -->
     
-    </div><!-- Modal -->
+    </div>
   </template>
   
 <script>
@@ -56,6 +47,7 @@ export default {
     return {
       isModalOpen: false,
       listItems: [],
+      selectedIndex: null,
     };
   },
   mounted() {
@@ -67,8 +59,12 @@ export default {
     },
     closeModal() {
       this.isModalOpen = false;
-    },
 
+    },
+    setActiveIndex(index) {
+      this.selectedIndex = index;
+    },
+  
     async loadData() {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
@@ -80,6 +76,8 @@ export default {
     },
   },
 };
+
+
 </script>
   
 <style lang="scss" scoped>
@@ -149,6 +147,10 @@ $dark-grey:#333333;
   &:hover{
     background-color: darkred;
   }
+}
+
+.active{
+  background-color: $teal-color;
 }
     
   }// Modal
