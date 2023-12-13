@@ -115,8 +115,8 @@
 
     <div class="checkout-box-content">
       <Checkoutboxrow
-      title='Carbinet'
-      model='Model 1'
+      title='Cabinet'
+      model='wduiodioæhwjioædha'
       cost='12.500 kr'
       number='2 stks'
       />

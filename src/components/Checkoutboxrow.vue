@@ -46,7 +46,8 @@ height: 65px;
   }
 
   .model {
-    text-align: left;
+    width: 200px;
+    text-align: center;
 
     p {
       padding-top: 20px;
@@ -54,24 +55,27 @@ height: 65px;
   }
 
   .cost {
-
+    width: 150px;
 
     p {
       text-decoration: underline;
+      text-align: center;
       padding-top: 20px;
       margin-right: 2em;
     }
   }
 
   .number {
-    text-decoration: underline;
+      width: 100px;
+      text-decoration: underline;
+      text-align: center;
       padding-top: 20px;
       margin-right: 2em;
   }
 }
 
-.checkout-box-content-row:last-child {
-  // border-bottom-left-radius: 10px;
-  // border-bottom-right-radius: 10px;
-}
+// .checkout-box-content-row:last-child {
+//   // border-bottom-left-radius: 10px;
+//   // border-bottom-right-radius: 10px;
+// }
 </style>
