@@ -35,7 +35,7 @@
       </a>
      
     </div>
-    <button class="accept-btn" @click="closeModal">Accept</button>
+    <button class="accept-btn" @click="handleAccept">Accept</button>
     <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
     
     </div>
@@ -64,7 +64,12 @@ export default {
     setActiveIndex(index) {
       this.selectedIndex = index;
     },
-  
+    handleAccept() {
+      if (this.selectedIndex !== null) {
+        const selectedData = this.array[this.selectedIndex];
+        console.log('Selected Data:', selectedData);
+      }
+    },
     async loadData() {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
