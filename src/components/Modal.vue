@@ -4,7 +4,9 @@
         bmodel: String,
         bprice: String,
         mtitle: String,
-        array: Array
+        array: Array,
+        selectedOption: Object,
+        updateSelectedOption: Function,
       })
 </script>
 
@@ -19,7 +21,7 @@
       </div>
     </a>
 
-  </div><!-- Button -->
+  </div>
 
   <div v-if="isModalOpen" class="modal">
     <div class="modal-content">
@@ -27,18 +29,16 @@
       <a href="#" @click.prevent="closeModal">&times;</a>
     </div>
     <div v-for="(item, key) in array" :key="key" :class="{ 'modal-inner': true, 'active': key === selectedIndex }">
-      <a href="#" class="Choose-option" @click.prevent="setActiveIndex(key)">
-      <h2>Model: {{ item.model }}</h2> 
-      <h2>Capacity: {{ item.capacity }} <br></h2> 
-      <h2>Pris: {{ item.price_dkk_cent }} kr</h2> 
-
+      <a href="#" class="Choose-option" @click.prevent="selectItem(item)">
+        <h2>Model: {{ item.model }}</h2>
+        <h2>Kapacitet: {{ item.capacity }} <br></h2>
+        <h2>Pris: {{ item.price_dkk_cent }} kr</h2>
       </a>
-     
     </div>
-    <button class="accept-btn" @click="handleAccept">Accept</button>  <!-- MANGLER FUNCTION handleAccept-->
-    <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
-    
-    </div>
+
+    <button class="accept-btn" @click="closeModal">Accepter</button>
+    <button class="accept-btn cancel-btn" @click="closeModal">Annuller</button>
+  </div>
 
       
   </template>
@@ -50,27 +50,37 @@ export default {
       isModalOpen: false,
       listItems: [],
       selectedIndex: null,
-      selectedData:null,
+
     };
   },
+
+
   mounted() {
     this.loadData();
   },
   methods: {
+
     openModal() {
       this.isModalOpen = true;
     },
     closeModal() {
       this.isModalOpen = false;
-
     },
-    setActiveIndex(index) {
+    setActiveIndex(index, item) {
       this.selectedIndex = index;
     },
 
-    selectOption(option) {
-      this.$emit('selection', option);
+    selectItem(item) {
+      // Opdater den valgte mulighed
+      this.updateSelectedOption(item);
     },
+
+    addToCheckout() {
+      // Send den valgte mulighed til overordnet komponent
+      this.addToCheckout(this.selectedOption);
+      this.closeModal();
+    },
+
     async loadData() {
       try {
         const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
@@ -155,7 +165,7 @@ $dark-grey:#333333;
   }
 }
 
-.active{
+.Choose-option.active {
   background-color: $teal-color;
 }
     

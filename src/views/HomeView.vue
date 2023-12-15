@@ -28,29 +28,35 @@
 
   <div class="config-section-inner">
     <div v-if="listItems.components && listItems.components.memory">
-      <Modal
-        :key="key"
-        :btitle="'Ram'"
-        :bmodel="'Model: Stefan'"
-        :bprice="'Price: 1000 $'"
-        :mtitle="'Choose Ram'"
-        :array="listItems.components.memory.user_selectable_options"
-      />
-    </div>
+        <Modal
+          :key="key"
+          :btitle="'Ram'"
+          :bmodel="'Model: Stefan'"
+          :bprice="'Pris: 1000 $'"
+          :mtitle="'Vælg RAM'"
+          :array="listItems.components.memory.user_selectable_options"
+          :selectedOption="selectedMemoryOption"
+          :updateSelectedOption="updateSelectedMemoryOption"
+          :addToCheckout="addToCheckout"
+        />
+      </div>
 
 
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
   <div v-if="listItems.components && listItems.components.disks">
-    <Modal
-        :key="key"
-        :btitle="'DISKS'"
-        :bmodel="'Model: Stefan'"
-        :bprice="'Price: 1000 $'"
-        :mtitle="'Choose CPU'"
-        :array="listItems.components.disks.user_selectable_options"
-      />
-    </div>
+        <Modal
+          :key="key"
+          :btitle="'DISKS'"
+          :bmodel="'Model: Stefan'"
+          :bprice="'Pris: 1000 $'"
+          :mtitle="'Vælg Disk'"
+          :array="listItems.components.disks.user_selectable_options"
+          :selectedOption="selectedDiskOption"
+          :updateSelectedOption="updateSelectedDiskOption"
+          :addToCheckout="addToCheckout"
+        />
+      </div>
   </div>
 
   <div class="config-section-inner">
@@ -59,11 +65,14 @@
     <div v-if="listItems.components && listItems.components.cpu">
       <Modal
         :key="key"
-        :btitle="'CPU'"
-        :bmodel="'Model: Stefan'"
-        :bprice="'Price: 1000 $'"
-        :mtitle="'Choose CPU'"
+        :btitle="'cpu'"
+        :bmodel="'Model: Arni'"
+        :bprice="'Price: 500 $'"
+        :mtitle="'Choose Port Speed'"
         :array="listItems.components.cpu.user_selectable_options"
+        :selectedOption="selectedCpuOption"
+          :updateSelectedOption="updateSelectedCpuOption"
+          :addToCheckout="addToCheckout"
       />
     </div>
 
@@ -78,8 +87,6 @@
         :array="listItems.components.network.user_selectable_options"
       />
     </div>
-
-    
 
     </div>
     <div style="text-align: center;">
@@ -111,49 +118,44 @@
     <div class="checkout-box-content">
       <Checkoutboxrow
       title='Cabinet'
-      model='model2'
+      model='model 2'
       cost='12.500 kr'
       number='2 stks'
       />
       <Checkoutboxrow
       title='CPU'
-      model='model 2'
-      cost='10.000 kr'
+      :model='selectedCpuOption ? selectedCpuOption.model : "-"'
+      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
       number='2 stks'
       />
       <Checkoutboxrow
       title='RAM'
-      model='model 3'
-      cost='1058.500 kr'
+      :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
+      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
       number='2 stks'
       />
       <Checkoutboxrow
       title='DISCS'
-      model='model 4'
-      cost='3500 kr'
+      :model='selectedDiskOption ? selectedDiskOption.model : "-"'
+      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
       number='2 stks'
       />
       <Checkoutboxrow
       title='Port Speed'
-      model='model 5'
-      cost='10.000 kr'
+      :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
+      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
       number='2 stks'
       />
     </div>
   </div><!-- Checkout Box -->
 
-  <!-- <div v-if="selectedData" class="selected-data">
-        <h2>Selected Model: {{ selectedData.model }}</h2>
-        <h2>Selected Capacity: {{ selectedData.capacity }} <br></h2>
-        <h2>Selected Pris: {{ selectedData.price_dkk_cent }} kr</h2>
-      </div> -->
 
   <div class="total-cost-box">
     <h2 class="total-cost-title">Total Cost</h2>
 
   <div class="total-wrapper">
     <div class="total-cost">
-    <h3>##.##.##,## $</h3>
+    <h3>{{ totalCost }}</h3>
     </div>
     <div class="checkout-btn">
       <h3>Checkout</h3>
@@ -207,47 +209,34 @@ onMounted(async () => {
     console.error('Fejl ved indlæsning af JSON-data:', error);
   }
 });
+const selectedMemoryOption = ref(null);
+const selectedDiskOption = ref(null);
+const selectedCpuOption = ref(null);
+
+const updateSelectedMemoryOption = (option) => {
+  selectedMemoryOption.value = option;
+};
+
+const updateSelectedDiskOption = (option) => {
+  selectedDiskOption.value = option;
+};
+
+const updateSelectedCpuOption = (option) => {
+  selectedCpuOption.value = option;
+};
+
+const addToCheckout = (selectedOption) => {
+  // Opdater din listItems array eller udfør andre nødvendige handlinger
+  // baseret på den valgte mulighed
+  console.log('Valgt mulighed:', selectedOption);
+};
+
 </script>
 
 <script>
-export default {
-  components: {
-    Modal,
-  },
-  data() {
-    return {
-      listItems: {
-        components: {
-          disks: {
-            user_selectable_options: [
-              // Your disk options data here
-            ],
-          },
-          memory: {
-            user_selectable_options: [
-              // Your memory options data here
-            ],
-          },
-          // Add more components as needed
-        },
-      },
-      selectedDisk: null,
-      selectedMemory: null,
-      // Add more variables for other components as needed
-    };
-  },
-  methods: {
-    selectDisk(disk) {
-      this.selectedDisk = { ...disk };
-    },
-    selectMemory(memory) {
-      this.selectedMemory = { ...memory };
-    },
-    // Add more methods for other components as needed
-  },
-};
-</script>
 
+
+</script>
 
 
 
