@@ -117,34 +117,34 @@
 
     <div class="checkout-box-content">
       <Checkoutboxrow
-      title='Cabinet'
-      model='model 2'
-      cost='12.500 kr'
-      number='2 stks'
+      title='Carbinet'
+      model='-'
+      cost='-'
+      number='-'
       />
       <Checkoutboxrow
       title='CPU'
       :model='selectedCpuOption ? selectedCpuOption.model : "-"'
       :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
-      number='2 stks'
+      number='1 stks'
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
       :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
-      number='2 stks'
+      number='1 stks'
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
       :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
-      number='2 stks'
+      number='1 stks'
       />
       <Checkoutboxrow
       title='Port Speed'
       :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
       :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
-      number='2 stks'
+      number='1 stks'
       />
     </div>
   </div><!-- Checkout Box -->

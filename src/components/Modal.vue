@@ -36,7 +36,7 @@
       </a>
     </div>
 
-    <button class="accept-btn" @click="closeModal">Accepter</button>
+    <!-- <button class="accept-btn" @click="closeModal">Accepter</button> -->
     <button class="accept-btn cancel-btn" @click="closeModal">Annuller</button>
   </div>
 
@@ -73,6 +73,7 @@ export default {
     selectItem(item) {
       // Opdater den valgte mulighed
       this.updateSelectedOption(item);
+      this.closeModal();
     },
 
     addToCheckout() {
