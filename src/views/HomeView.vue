@@ -30,28 +30,27 @@
     <div v-if="listItems.components && listItems.components.memory">
       <Modal
         :key="key"
-        :btitle="'RAM'"
+        :btitle="'Ram'"
         :bmodel="'Model: Stefan'"
         :bprice="'Price: 1000 $'"
-        :mtitle="'Choose RAM'"
+        :mtitle="'Choose Ram'"
         :array="listItems.components.memory.user_selectable_options"
       />
     </div>
 
 
-
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
   <div v-if="listItems.components && listItems.components.disks">
-      <Modal
-        :btitle="'Disks'"
+    <Modal
+        :key="key"
+        :btitle="'DISKS'"
         :bmodel="'Model: Stefan'"
         :bprice="'Price: 1000 $'"
         :mtitle="'Choose CPU'"
         :array="listItems.components.disks.user_selectable_options"
       />
     </div>
-
   </div>
 
   <div class="config-section-inner">
@@ -69,9 +68,6 @@
     </div>
 
 
-
-
-
     <div v-if="listItems.components && listItems.components.network">
       <Modal
         :key="key"
@@ -83,7 +79,7 @@
       />
     </div>
 
-
+    
 
     </div>
     <div style="text-align: center;">
@@ -92,12 +88,11 @@
 </div>
 
 </section>
-<section>
 
   <hr id="checkout" style="margin-top: 50px;">
 
 
-</section>
+
 
   </main>
 
@@ -116,7 +111,7 @@
     <div class="checkout-box-content">
       <Checkoutboxrow
       title='Cabinet'
-      model='wduiodioæhwjioædha'
+      model='model2'
       cost='12.500 kr'
       number='2 stks'
       />
@@ -147,7 +142,11 @@
     </div>
   </div><!-- Checkout Box -->
 
-
+  <!-- <div v-if="selectedData" class="selected-data">
+        <h2>Selected Model: {{ selectedData.model }}</h2>
+        <h2>Selected Capacity: {{ selectedData.capacity }} <br></h2>
+        <h2>Selected Pris: {{ selectedData.price_dkk_cent }} kr</h2>
+      </div> -->
 
   <div class="total-cost-box">
     <h2 class="total-cost-title">Total Cost</h2>
@@ -209,6 +208,48 @@ onMounted(async () => {
   }
 });
 </script>
+
+<script>
+export default {
+  components: {
+    Modal,
+  },
+  data() {
+    return {
+      listItems: {
+        components: {
+          disks: {
+            user_selectable_options: [
+              // Your disk options data here
+            ],
+          },
+          memory: {
+            user_selectable_options: [
+              // Your memory options data here
+            ],
+          },
+          // Add more components as needed
+        },
+      },
+      selectedDisk: null,
+      selectedMemory: null,
+      // Add more variables for other components as needed
+    };
+  },
+  methods: {
+    selectDisk(disk) {
+      this.selectedDisk = { ...disk };
+    },
+    selectMemory(memory) {
+      this.selectedMemory = { ...memory };
+    },
+    // Add more methods for other components as needed
+  },
+};
+</script>
+
+
+
 
 
 
