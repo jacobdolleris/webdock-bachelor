@@ -35,7 +35,8 @@
         :btitle="'CPU'"
         :bmodel='selectedCpuOption ? selectedCpuOption.model : "-"'
         :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
-        :mtitle="'Choose Port Speed'"
+        :mtitle="'Choose CPU'"
+        :desc="listItems.components.cpu.description"
         :array="listItems.components.cpu.user_selectable_options"
         :selectedOption="selectedCpuOption"
           :updateSelectedOption="updateSelectedCpuOption"
@@ -55,6 +56,7 @@
           :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "-"'
           :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
           :mtitle="'Vælg RAM'"
+          :desc="listItems.components.memory.description"
           :array="listItems.components.memory.user_selectable_options"
           :selectedOption="selectedMemoryOption"
           :updateSelectedOption="updateSelectedMemoryOption"
@@ -73,6 +75,7 @@
           :bmodel='selectedDiskOption ? selectedDiskOption.model : "-"'
           :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
           :mtitle="'Vælg Disk'"
+          :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
           :selectedOption="selectedDiskOption"
           :updateSelectedOption="updateSelectedDiskOption"
@@ -86,6 +89,7 @@
       <Modal
         :key="key"
         :btitle="'Port Speed'"
+        :desc="listItems.components.network.description"
         :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "-"'
         :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
         :mtitle="'Choose Port Speed'"

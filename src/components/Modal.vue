@@ -4,6 +4,7 @@
         bmodel: String,
         bprice: String,
         mtitle: String,
+        desc: String,
         array: Array,
         selectedOption: Object,
         updateSelectedOption: Function,
@@ -25,9 +26,13 @@
 
   <div v-if="isModalOpen" class="modal">
     <div class="modal-content">
+
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
-    </div>
+
+      
+    </div><!-- Modal Content -->
+    <h2 class="description">{{ desc }}</h2>
     <div v-for="(item, key) in array" :key="key" :class="{ 'modal-inner': true, 'active': key === selectedIndex }">
       <a href="#" class="Choose-option" @click.prevent="selectItem(item)">
         <h2>Model: {{ item.model }}</h2>
@@ -129,6 +134,14 @@ $dark-grey:#333333;
 .modal-content{
     display: flex;
     justify-content: space-between;
+
+    h1 {
+      margin-bottom: 1em;
+    }
+}
+
+.description {
+  margin-bottom: 1em;
 }
 
 .modal-inner{
