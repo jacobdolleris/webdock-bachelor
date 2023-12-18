@@ -32,7 +32,7 @@
       <a href="#" class="Choose-option" @click.prevent="selectItem(item)">
         <h2>Model: {{ item.model }}</h2>
         <h2>Kapacitet: {{ item.capacity }} <br></h2>
-        <h2>Pris: {{ item.price_dkk_cent }} kr</h2>
+        <h2>Pris: {{ item.price_dkk_cent }} kr.-</h2>
       </a>
     </div>
 
