@@ -27,7 +27,28 @@
 <section class="config-section">
 
   <div class="config-section-inner">
-    <div v-if="listItems.components && listItems.components.memory">
+
+
+    <div v-if="listItems.components && listItems.components.cpu">
+      <Modal
+        :key="key"
+        :btitle="'CPU'"
+        :bmodel="'Model: Arni'"
+        :bprice="'Price: 500 $'"
+        :mtitle="'Choose Port Speed'"
+        :array="listItems.components.cpu.user_selectable_options"
+        :selectedOption="selectedCpuOption"
+          :updateSelectedOption="updateSelectedCpuOption"
+          :addToCheckout="addToCheckout"
+      />
+    </div>
+   
+
+
+  <div class="config-ection-inner-image">
+  </div><!-- INNER IMAGE -->
+
+  <div v-if="listItems.components && listItems.components.memory">
         <Modal
           :key="key"
           :btitle="'Ram'"
@@ -41,10 +62,11 @@
         />
       </div>
 
+  </div>
 
-  <div class="config-ection-inner-image">
-  </div><!-- INNER IMAGE -->
-  <div v-if="listItems.components && listItems.components.disks">
+  <div class="config-section-inner">
+
+    <div v-if="listItems.components && listItems.components.disks">
         <Modal
           :key="key"
           :btitle="'DISKS'"
@@ -57,24 +79,7 @@
           :addToCheckout="addToCheckout"
         />
       </div>
-  </div>
-
-  <div class="config-section-inner">
-
     
-    <div v-if="listItems.components && listItems.components.cpu">
-      <Modal
-        :key="key"
-        :btitle="'cpu'"
-        :bmodel="'Model: Arni'"
-        :bprice="'Price: 500 $'"
-        :mtitle="'Choose Port Speed'"
-        :array="listItems.components.cpu.user_selectable_options"
-        :selectedOption="selectedCpuOption"
-          :updateSelectedOption="updateSelectedCpuOption"
-          :addToCheckout="addToCheckout"
-      />
-    </div>
 
 
     <div v-if="listItems.components && listItems.components.network">
