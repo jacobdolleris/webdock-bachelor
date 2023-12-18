@@ -33,8 +33,8 @@
       <Modal
         :key="key"
         :btitle="'CPU'"
-        :bmodel="'Model: Arni'"
-        :bprice="'Price: 500 $'"
+        :bmodel='selectedCpuOption ? selectedCpuOption.model : "-"'
+        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.cpu.user_selectable_options"
         :selectedOption="selectedCpuOption"
@@ -52,8 +52,8 @@
         <Modal
           :key="key"
           :btitle="'Ram'"
-          :bmodel="'Model: Stefan'"
-          :bprice="'Pris: 1000 $'"
+          :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "-"'
+          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
           :mtitle="'Vælg RAM'"
           :array="listItems.components.memory.user_selectable_options"
           :selectedOption="selectedMemoryOption"
@@ -70,8 +70,8 @@
         <Modal
           :key="key"
           :btitle="'DISKS'"
-          :bmodel="'Model: Stefan'"
-          :bprice="'Pris: 1000 $'"
+          :bmodel='selectedDiskOption ? selectedDiskOption.model : "-"'
+          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
           :mtitle="'Vælg Disk'"
           :array="listItems.components.disks.user_selectable_options"
           :selectedOption="selectedDiskOption"
@@ -86,8 +86,8 @@
       <Modal
         :key="key"
         :btitle="'Port Speed'"
-        :bmodel="'Model: Arni'"
-        :bprice="'Price: 500 $'"
+        :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "-"'
+        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.network.user_selectable_options"
       />
