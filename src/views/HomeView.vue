@@ -136,26 +136,37 @@
       :model='selectedCpuOption ? selectedCpuOption.model : "-"'
       :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
       number='1 stks'
-      @updateTotalCost="updateTotalCost"
+
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
       :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : 0'
       number='1 stks'
+     
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
       :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : 0'
       number='1 stks'
+  
       />
       <Checkoutboxrow
       title='Port Speed'
       :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
       :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : 0'
       number='1 stks'
+    
       />
+
+      <!-- <Checkoutboxrow
+      title='CPU'
+      :model='selectedCpuOption ? selectedCpuOption.model : "-"'
+      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
+      number='1 stks'
+      @updateTotalCost="updateTotalCost"
+      /> -->
     </div>
   </div><!-- Checkout Box -->
 
@@ -165,7 +176,7 @@
 
   <div class="total-wrapper">
     <div class="total-cost">
-    <h3>{{ totalCost }}</h3>
+      <h3>{{ totalCost }}</h3>
     </div>
     <div class="checkout-btn">
       <h3>Checkout</h3>
@@ -208,6 +219,7 @@ import { ref, onMounted } from 'vue';
 import Modal from '../components/Modal.vue';
 import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
+
 const listItems = ref([]);
 
 
@@ -239,14 +251,19 @@ const updateSelectedCpuOption = (option) => {
 };
 
 const addToCheckout = (selectedOption) => {
-  // Opdater din listItems array eller udfør andre nødvendige handlinger
-  // baseret på den valgte mulighed
+
   console.log('Valgt mulighed:', selectedOption);
+
+
+  //  const priceInKr = selectedOption.price_dkk_cent / 100;
+
+
+  //   updateTotalCost(priceInKr);
 };
 
 </script>
 
-<script>
+<!-- <script>
 export default {
   data() {
     return {
@@ -255,11 +272,16 @@ export default {
   },
   methods: {
     updateTotalCost(newCost) {
+    Vue.nextTick(() => {
       this.totalCost += newCost;
+    });
+  },
+    formatCurrency(amount) {
+      return new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(amount);
     }
   }
 };
-</script>
+</script> -->
 
 
 
