@@ -2,7 +2,7 @@
       defineProps({
         btitle: String,
         bmodel: String,
-        bprice: String,
+        bprice: Number,
         mtitle: String,
         desc: String,
         array: Array,
@@ -59,12 +59,17 @@ export default {
     };
   },
 
+  watch: {
+    cost(newCost) {
+      this.$emit('updateTotalCost', newCost);
+    }
+  },
+
 
   mounted() {
     this.loadData();
   },
   methods: {
-
     openModal() {
       this.isModalOpen = true;
     },

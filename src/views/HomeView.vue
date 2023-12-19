@@ -134,25 +134,26 @@
       <Checkoutboxrow
       title='CPU'
       :model='selectedCpuOption ? selectedCpuOption.model : "-"'
-      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
+      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
       number='1 stks'
+      @updateTotalCost="updateTotalCost"
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
-      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
+      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : 0'
       number='1 stks'
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
-      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
+      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : 0'
       number='1 stks'
       />
       <Checkoutboxrow
       title='Port Speed'
       :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
-      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
+      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : 0'
       number='1 stks'
       />
     </div>
@@ -209,6 +210,8 @@ import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
 const listItems = ref([]);
 
+
+
 onMounted(async () => {
   try {
     const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
@@ -221,6 +224,7 @@ onMounted(async () => {
 const selectedMemoryOption = ref(null);
 const selectedDiskOption = ref(null);
 const selectedCpuOption = ref(null);
+// const totalCost = parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : '')) + parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent: ''));
 
 const updateSelectedMemoryOption = (option) => {
   selectedMemoryOption.value = option;
@@ -243,8 +247,18 @@ const addToCheckout = (selectedOption) => {
 </script>
 
 <script>
-
-
+export default {
+  data() {
+    return {
+      totalCost: 0,
+    };
+  },
+  methods: {
+    updateTotalCost(newCost) {
+      this.totalCost += newCost;
+    }
+  }
+};
 </script>
 
 
