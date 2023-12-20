@@ -85,6 +85,30 @@ hr{
       margin: 40px;
     }
   
+    .goto-config {
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      a {
+        font-size: 40px;
+        text-decoration: none;
+      }
+
+      div {
+        background-color: $teal-color;
+        border-radius: 100%;
+        height: 50px;
+        margin: auto;
+        width: 50px;
+
+
+      }
+
+      div:hover {
+        background-color: #018a8a;
+        cursor: pointer;
+      }
+    }
   }
 
 
@@ -92,31 +116,68 @@ hr{
 
 // Midterstykke
 .config-section{
-    height: 800px; 
+    height: 800px;
+    margin: 0 auto;
     padding-top:100px;
 
+    .config-section-inner{
+        width: 100em; 
+        margin: auto; 
+        display: flex; 
+        justify-content: space-between;
+    
+        a{
+            text-decoration: none;
+            height: 100px;
+        }
+        a:hover{
+    
+            .config-section-inner-option{
+                background-color:$webdock-green;
+            }
+        }
+
+        .config-ection-inner-image{
+          width: 70%;
+          height: 400px;
+          background-image: url(/src/assets/img/server-placeholder2.png);
+          background-repeat:no-repeat;
+          background-position: center;
+      }
+    }
         h1{
             text-align: center;
         }
-}
-.config-section-inner{
-    width: 80%; 
-    margin: auto; 
-    display: flex; 
-    justify-content: space-between;
 
-    a{
+    .goto-checkout {
+      // background-color: red;
+
+
+      margin-top: 30px;
+      text-align: center;
+
+      a {
+        font-size: 40px;
         text-decoration: none;
-        height: 100px;
-    }
-    a:hover{
+      }
 
-        .config-section-inner-option{
-            background-color:$webdock-green;
-        }
-    }
+      div {
+        background-color: $teal-color;
+        border-radius: 100%;
+        height: 50px;
+        margin: auto;
+        width: 50px;
 
+
+      }
+
+      div:hover {
+        background-color: #018a8a;
+        cursor: pointer;
+      }
+    }
 }
+
 
 .config-section-inner-option{
     height: 125px; 
@@ -131,15 +192,7 @@ hr{
     }
 }
 
-.config-ection-inner-image{
-    width: 70%;
-    height: 500px;
-    background-image: url(/src/assets/img/server-placeholder2.png);
-    background-repeat:no-repeat;
 
-    background-position: center;
-
-}
 
 .option-midt{
 margin-top: -150px;

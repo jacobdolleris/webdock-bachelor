@@ -17,7 +17,7 @@
       <div class="config-section-inner-option">
         <h2>{{ btitle }}</h2>
         <h3>{{ bmodel }}</h3>
-        <h3>Price: {{ bprice }} Kr</h3>
+        <h3>Price: {{ bprice }} kr.-</h3>
 
       </div>
     </a>
@@ -42,7 +42,7 @@
     </div>
 
     <!-- <button class="accept-btn" @click="closeModal">Accepter</button> -->
-    <button class="accept-btn cancel-btn" @click="closeModal">Annuller</button>
+    <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
   </div>
 
       
@@ -181,6 +181,7 @@ $dark-grey:#333333;
 
   &:hover{
     background-color: darkred;
+    cursor: pointer;
   }
 }
 

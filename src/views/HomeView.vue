@@ -7,19 +7,29 @@
 
 
  <header>
-  <h1>Configure your <u>OWN</u> VPS server with <u>YOUR</u> own cinfiguration settings</h1>
+  <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
   <h2>For the best experience!</h2>
-  <a href="#config"><img src="../assets/img/icons/Arrow.png" alt=""></a>
+  
+  <div class="goto-config">
+    <a href="#config">
+
+    <!-- <img src="../assets/img/icons/Arrow.png" alt=""> -->
+    <div>
+      &darr;
+
+</div>
+</a>
+</div>
   <hr id="config">
  </header>
 
 <div class="DD-box">
   <div class="dropdown">
-  <button class="dropdown-btn">Choose Carbinet</button>
+  <button class="dropdown-btn">Choose Cabinet</button>
   <div class="dropdown-content">
-  <a href="#">Carbinet 1</a>
-  <a href="#">Carbinet 2</a>
-  <a href="#">Carbinet 3</a>
+  <a href="#">Cabinet 1</a>
+  <a href="#">Cabinet 2</a>
+  <a href="#">Cabinet 3</a>
   </div>
 </div>
 </div>
@@ -39,8 +49,8 @@
         :desc="listItems.components.cpu.description"
         :array="listItems.components.cpu.user_selectable_options"
         :selectedOption="selectedCpuOption"
-          :updateSelectedOption="updateSelectedCpuOption"
-          :addToCheckout="addToCheckout"
+        :updateSelectedOption="updateSelectedCpuOption"
+        :addToCheckout="addToCheckout"
       />
     </div>
    
@@ -55,7 +65,7 @@
           :btitle="'Ram'"
           :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "Choose Option"'
           :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "0"'
-          :mtitle="'Vælg RAM'"
+          :mtitle="'Choose RAM'"
           :desc="listItems.components.memory.description"
           :array="listItems.components.memory.user_selectable_options"
           :selectedOption="selectedMemoryOption"
@@ -64,7 +74,7 @@
         />
       </div>
 
-  </div>
+  </div><!-- Config Section Inner -->
 
   <div class="config-section-inner">
 
@@ -74,7 +84,7 @@
           :btitle="'DISKS'"
           :bmodel='selectedDiskOption ? selectedDiskOption.model : "Choose Option"'
           :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "0"'
-          :mtitle="'Vælg Disk'"
+          :mtitle="'Choose Disk'"
           :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
           :selectedOption="selectedDiskOption"
@@ -97,11 +107,18 @@
       />
     </div>
 
-    </div>
-    <div style="text-align: center;">
+    </div><!-- Config Section Inner -->
+    <div class="goto-checkout">
       <h2 style="margin-bottom: 20px;">Checkout</h2>
-    <a href="#checkout"><img src="../assets/img/icons/Arrow.png" alt=""></a>  
-</div>
+      <a href="#checkout">
+
+      <!-- <img src="../assets/img/icons/Arrow.png" alt=""> -->
+      <div>
+        &darr;
+
+  </div>
+</a>
+</div><!-- go to checkout -->
 
 </section>
 
