@@ -33,8 +33,8 @@
       <Modal
         :key="key"
         :btitle="'CPU'"
-        :bmodel='selectedCpuOption ? selectedCpuOption.model : "-"'
-        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "-"'
+        :bmodel='selectedCpuOption ? selectedCpuOption.model : "Choose Option"'
+        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "0"'
         :mtitle="'Choose CPU'"
         :desc="listItems.components.cpu.description"
         :array="listItems.components.cpu.user_selectable_options"
@@ -53,8 +53,8 @@
         <Modal
           :key="key"
           :btitle="'Ram'"
-          :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "-"'
-          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "-"'
+          :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "Choose Option"'
+          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "0"'
           :mtitle="'Vælg RAM'"
           :desc="listItems.components.memory.description"
           :array="listItems.components.memory.user_selectable_options"
@@ -72,8 +72,8 @@
         <Modal
           :key="key"
           :btitle="'DISKS'"
-          :bmodel='selectedDiskOption ? selectedDiskOption.model : "-"'
-          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "-"'
+          :bmodel='selectedDiskOption ? selectedDiskOption.model : "Choose Option"'
+          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "0"'
           :mtitle="'Vælg Disk'"
           :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
@@ -90,8 +90,8 @@
         :key="key"
         :btitle="'Port Speed'"
         :desc="listItems.components.network.description"
-        :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "-"'
-        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "-"'
+        :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "Choose Option"'
+        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "0"'
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.network.user_selectable_options"
       />
@@ -195,8 +195,8 @@
 <section class="content--container__checkinfo">
   <div class="text-wrapper">
 
-    <h1>Information about <span style="color: #01A1A1">checkout</span></h1>
-    <h2>Lorem ipsum dolor sit amet conectetur <span style="color: #01A1A1; text-decoration: underline;">adipisicing elit</span> Ipsum porro repellendus illo earum eos quam!</h2>
+    <h1>Information About Checkout</h1>
+    <h2>Lorem ipsum dolor sit amet conectetur adipisicing elit Ipsum porro repellendus illo earum eos quam!</h2>
     <h3>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi distinctio incidunt ipsam neque ex aliquam nostrum architecto fugit. Ullam quasi hic nostrum similique praesentium dolores voluptate reprehenderit repellendus perferendis eius.</h3>
 
   </div>

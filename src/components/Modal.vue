@@ -17,7 +17,7 @@
       <div class="config-section-inner-option">
         <h2>{{ btitle }}</h2>
         <h3>{{ bmodel }}</h3>
-        <h3>{{ bprice }}</h3>
+        <h3>Price: {{ bprice }} Kr</h3>
 
       </div>
     </a>
