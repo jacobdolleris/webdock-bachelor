@@ -81,10 +81,10 @@
     <div v-if="listItems.components && listItems.components.disks">
         <Modal
           :key="key"
-          :btitle="'DISKS'"
+          :btitle="'Discs'"
           :bmodel='selectedDiskOption ? selectedDiskOption.model : "Choose Option"'
           :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "0"'
-          :mtitle="'Choose Disk'"
+          :mtitle="'Choose Disc'"
           :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
           :selectedOption="selectedDiskOption"
