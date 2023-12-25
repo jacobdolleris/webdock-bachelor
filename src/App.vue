@@ -16,6 +16,3 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 
-<style lang="scss">
-  @import '../src/assets/main.scss';
-</style>

@@ -29,7 +29,6 @@
 
       <h1>{{ mtitle }}</h1>
       <a href="#" @click.prevent="closeModal">&times;</a>
-
       
     </div><!-- Modal Content -->
     <h2 class="description">{{ desc }}</h2>
@@ -40,12 +39,8 @@
         <h2>Pris: {{ item.price_dkk_cent }} kr.-</h2>
       </a>
     </div>
-
-    <!-- <button class="accept-btn" @click="closeModal">Accepter</button> -->
     <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
   </div>
-
-      
   </template>
   
 <script>
