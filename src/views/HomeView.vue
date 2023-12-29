@@ -44,7 +44,7 @@
         :key="key"
         :btitle="'CPU'"
         :bmodel='selectedCpuOption ? selectedCpuOption.model : "Choose Option"'
-        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : "0"'
+        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
         :mtitle="'Choose CPU'"
         :desc="listItems.components.cpu.description"
         :array="listItems.components.cpu.user_selectable_options"
@@ -64,7 +64,7 @@
           :key="key"
           :btitle="'Ram'"
           :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "Choose Option"'
-          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : "0"'
+          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : 0'
           :mtitle="'Choose RAM'"
           :desc="listItems.components.memory.description"
           :array="listItems.components.memory.user_selectable_options"
@@ -83,7 +83,7 @@
           :key="key"
           :btitle="'Discs'"
           :bmodel='selectedDiskOption ? selectedDiskOption.model : "Choose Option"'
-          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : "0"'
+          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : 0'
           :mtitle="'Choose Disc'"
           :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
@@ -101,7 +101,7 @@
         :btitle="'Port Speed'"
         :desc="listItems.components.network.description"
         :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "Choose Option"'
-        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : "0"'
+        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : 0'
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.network.user_selectable_options"
       />
@@ -142,40 +142,39 @@
     </div>
 
     <div class="checkout-box-content">
-      <Checkoutboxrow
-      title='Carbinet'
+      <!-- <Checkoutboxrow
+      title='Cabinet'
       model='-'
-      cost='-'
+      cost=''
       number='-'
-      />
+      /> -->
       <Checkoutboxrow
       title='CPU'
-      :model='selectedCpuOption ? selectedCpuOption.model : "-"'
-      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
+      :model='selectedCpuOption ? selectedCpuOption.model : ""'
+      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : null'
       number='1 stks'
-
+      @updateTotalCost="updateTotalCost('cpu', $event)"
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
-      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : 0'
+      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : null'
       number='1 stks'
-     
+      @updateTotalCost="updateTotalCost('memory', $event)"
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
-      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : 0'
+      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : null'
       number='1 stks'
-  
+      @updateTotalCost="updateTotalCost('disk', $event)"
       />
-      <Checkoutboxrow
+      <!-- <Checkoutboxrow
       title='Port Speed'
       :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
-      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : 0'
+      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : null'
       number='1 stks'
-    
-      />
+      /> -->
 
       <!-- <Checkoutboxrow
       title='CPU'
@@ -250,6 +249,7 @@ onMounted(async () => {
     console.error('Fejl ved indlæsning af JSON-data:', error);
   }
 });
+// const selectCabinetOption = ref(null);
 const selectedMemoryOption = ref(null);
 const selectedDiskOption = ref(null);
 const selectedCpuOption = ref(null);
@@ -267,6 +267,10 @@ const updateSelectedCpuOption = (option) => {
   selectedCpuOption.value = option;
 };
 
+// const updateSelectedCabinetOption = (option) => {
+//   selectCabinetOption.value = option;
+// };
+
 const addToCheckout = (selectedOption) => {
 
   console.log('Valgt mulighed:', selectedOption);
@@ -280,25 +284,35 @@ const addToCheckout = (selectedOption) => {
 
 </script>
 
-<!-- <script>
+<script>
 export default {
   data() {
     return {
       totalCost: 0,
+      selectedProducts: {
+        cpu: null,
+        memory: null,
+        disk: null,
+      },
+      key: null,
     };
   },
   methods: {
-    updateTotalCost(newCost) {
-    Vue.nextTick(() => {
-      this.totalCost += newCost;
-    });
+    updateTotalCost(productCategory, newCost) {
+      this.selectedProducts[productCategory] = newCost;
+
+      this.totalCost = Object.values(this.selectedProducts).reduce((sum, cost) => sum + cost, 0)
+    }
+    // updateTotalCost(newCost) {
+    // Vue.nextTick(() => {
+    //   this.totalCost += newCost;
+    // });
   },
     formatCurrency(amount) {
       return new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(amount);
     }
-  }
-};
-</script> -->
+  };
+</script>
 
 
 
