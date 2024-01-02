@@ -232,7 +232,7 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import Modal from '../components/Modal.vue';
+import Modal from '@components/Modal.vue';
 import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
 
