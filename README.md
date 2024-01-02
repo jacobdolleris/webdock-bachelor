@@ -5,7 +5,11 @@
 
 ### This Project is for a bachelor assignment where we got requested from Webdock.io to create a new page
 ### The page in question is for customers and users to customise their own server in an easy an intuitive way
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> cee5b85bfdf92d3fcc3803983aad3b6671f9f5e0
 # WebdockBachelor
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -41,4 +45,7 @@ npm run build
 ```sh
 npm run test:unit
 ```
+<<<<<<< HEAD
 >>>>>>> dev
+=======
+>>>>>>> cee5b85bfdf92d3fcc3803983aad3b6671f9f5e0
