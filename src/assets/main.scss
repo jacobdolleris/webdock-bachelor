@@ -116,12 +116,12 @@ hr{
 
 // Midterstykke
 .config-section{
-    height: 800px;
+    height: auto;
     margin: 0 auto;
     padding-top:100px;
 
     .config-section-inner{
-        width: 100em; 
+        width: 80em; 
         margin: auto; 
         display: flex; 
         justify-content: space-between;
@@ -140,9 +140,11 @@ hr{
         .config-ection-inner-image{
           width: 70%;
           height: 400px;
+          
           background-image: url(/src/assets/img/server-placeholder2.png);
           background-repeat:no-repeat;
           background-position: center;
+          margin-top: 100px;
       }
     }
         h1{
