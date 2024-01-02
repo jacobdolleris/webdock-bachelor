@@ -61,7 +61,6 @@ const addToCheckout = (selectedOption) => {
  <header>
   <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
   <h2>For the best experience!</h2>
-  <h2>TEST FOR HOST</h2>
   
   <div class="goto-config">
     <a href="#config">
