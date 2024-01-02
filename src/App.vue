@@ -10,7 +10,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <router-link to="about"  style="margin-right: 30px;">Go to About</router-link>
       <router-link to="test">Go to Testside</router-link>
     </div> -->
-    <p>hej</p>
+
   </header>
 <RouterView />
 </template>
