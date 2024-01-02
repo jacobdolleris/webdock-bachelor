@@ -1,14 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-
-</script>
-
-
-  <header>
-
-  </header>
-<RouterView />
-
 
 
 <template>
@@ -333,10 +322,5 @@ export default {
 
 
 
-
-
-
-<script>
-</script>
 
 
