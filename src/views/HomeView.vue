@@ -1,4 +1,56 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+import Modal from '../components/Modal.vue';
+import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
+
+const listItems = ref([]);
+
+
+
+onMounted(async () => {
+  try {
+    const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
+    const finalRes = await response.json();
+    listItems.value = finalRes;
+  } catch (error) {
+    console.error('Fejl ved indlæsning af JSON-data:', error);
+  }
+});
+// const selectCabinetOption = ref(null);
+const selectedMemoryOption = ref(null);
+const selectedDiskOption = ref(null);
+const selectedCpuOption = ref(null);
+// const totalCost = parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : '')) + parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent: ''));
+
+const updateSelectedMemoryOption = (option) => {
+  selectedMemoryOption.value = option;
+};
+
+const updateSelectedDiskOption = (option) => {
+  selectedDiskOption.value = option;
+};
+
+const updateSelectedCpuOption = (option) => {
+  selectedCpuOption.value = option;
+};
+
+// const updateSelectedCabinetOption = (option) => {
+//   selectCabinetOption.value = option;
+// };
+
+const addToCheckout = (selectedOption) => {
+
+  console.log('Valgt mulighed:', selectedOption);
+
+
+  //  const priceInKr = selectedOption.price_dkk_cent / 100;
+
+
+  //   updateTotalCost(priceInKr);
+};
+
+</script>
 
 <template>
 
@@ -227,62 +279,6 @@
   <div class="footer-replacement ignore"> <h2>Footer</h2></div>
 
 </template>
-
-
-
-<script setup>
-import { ref, onMounted } from 'vue';
-import Modal from '../components/Modal.vue';
-import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
-
-
-const listItems = ref([]);
-
-
-
-onMounted(async () => {
-  try {
-    const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
-    const finalRes = await response.json();
-    listItems.value = finalRes;
-  } catch (error) {
-    console.error('Fejl ved indlæsning af JSON-data:', error);
-  }
-});
-// const selectCabinetOption = ref(null);
-const selectedMemoryOption = ref(null);
-const selectedDiskOption = ref(null);
-const selectedCpuOption = ref(null);
-// const totalCost = parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : '')) + parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent: ''));
-
-const updateSelectedMemoryOption = (option) => {
-  selectedMemoryOption.value = option;
-};
-
-const updateSelectedDiskOption = (option) => {
-  selectedDiskOption.value = option;
-};
-
-const updateSelectedCpuOption = (option) => {
-  selectedCpuOption.value = option;
-};
-
-// const updateSelectedCabinetOption = (option) => {
-//   selectCabinetOption.value = option;
-// };
-
-const addToCheckout = (selectedOption) => {
-
-  console.log('Valgt mulighed:', selectedOption);
-
-
-  //  const priceInKr = selectedOption.price_dkk_cent / 100;
-
-
-  //   updateTotalCost(priceInKr);
-};
-
-</script>
 
 <script>
 export default {
