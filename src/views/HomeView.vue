@@ -152,21 +152,21 @@
       title='CPU'
       :model='selectedCpuOption ? selectedCpuOption.model : ""'
       :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : null'
-      number='1 stks'
+      number='1 pcs'
       @updateTotalCost="updateTotalCost('cpu', $event)"
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
       :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : null'
-      number='1 stks'
+      number='1 pcs'
       @updateTotalCost="updateTotalCost('memory', $event)"
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
       :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : null'
-      number='1 stks'
+      number='1 pcs'
       @updateTotalCost="updateTotalCost('disk', $event)"
       />
       <!-- <Checkoutboxrow
