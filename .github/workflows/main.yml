@@ -12,11 +12,11 @@ jobs:
         npm install
         npm run build
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@3.1.1
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        ftp-server: linux369.unoeuro.com
-        ftp-username: sej.one
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
+        server: linux369.unoeuro.com
+        username: sej.one
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./dist/
         server-dir: ./bachelor/
         port: 21
