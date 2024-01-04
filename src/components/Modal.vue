@@ -76,13 +76,11 @@ export default {
     },
 
     selectItem(item) {
-      // Opdater den valgte mulighed
       this.updateSelectedOption(item);
       this.closeModal();
     },
 
     addToCheckout() {
-      // Send den valgte mulighed til overordnet komponent
       this.addToCheckout(this.selectedOption);
       this.closeModal();
     },
