@@ -275,8 +275,8 @@ const addToCheckout = (selectedOption) => {
 </main><!-- Content Container -->
 
 
-
-  <div class="footer-replacement ignore"> <h2>Footer</h2></div>
+<!-- 
+  <div class="footer-replacement ignore"> <h2>Footer</h2></div> -->
 
 </template>
 
