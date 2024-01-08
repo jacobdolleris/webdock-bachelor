@@ -17,7 +17,7 @@
       <div class="config-section-inner-option">
         <h2>{{ btitle }}</h2>
         <h3>{{ bmodel }}</h3>
-        <h3>Price: {{ bprice }} kr.-</h3>
+        <h3>{{ bprice }}</h3>
 
       </div>
     </a>
@@ -54,12 +54,6 @@ export default {
     };
   },
 
-  watch: {
-    cost(newCost) {
-      this.$emit('updateTotalCost', newCost);
-    }
-  },
-
 
   mounted() {
     this.loadData();
@@ -78,12 +72,6 @@ export default {
     selectItem(item) {
       // Opdater den valgte mulighed
       this.updateSelectedOption(item);
-      this.closeModal();
-    },
-
-    addToCheckout() {
-      // Send den valgte mulighed til overordnet komponent
-      this.addToCheckout(this.selectedOption);
       this.closeModal();
     },
 

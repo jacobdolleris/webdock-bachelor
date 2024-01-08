@@ -1,46 +1,33 @@
-
-
 <template>
-
-
   <main class="content">
+    <header>
+      <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
+      <h2>For the best experience!</h2>
+      <div class="goto-config">
+        <a href="#config">
+          <div>
+            &darr;
+          </div>
+        </a>
+      </div>
+      <hr id="config">
+    </header>
 
+    <div class="DD-box">
+      <div class="dropdown">
+        <button class="dropdown-btn">Choose Cabinet</button>
+        <div class="dropdown-content">
+          <a href="#">Cabinet 1</a>
+          <a href="#">Cabinet 2</a>
+          <a href="#">Cabinet 3</a>
+        </div>
+      </div>
+    </div>
 
- <header>
-  <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
-  <h2>For the best experience!</h2>
-  
-  <div class="goto-config">
-    <a href="#config">
-
-    <!-- <img src="../assets/img/icons/Arrow.png" alt=""> -->
-    <div>
-      &darr;
-
-</div>
-</a>
-</div>
-  <hr id="config">
- </header>
-
-<div class="DD-box">
-  <div class="dropdown">
-  <button class="dropdown-btn">Choose Cabinet</button>
-  <div class="dropdown-content">
-  <a href="#">Cabinet 1</a>
-  <a href="#">Cabinet 2</a>
-  <a href="#">Cabinet 3</a>
-  </div>
-</div>
-</div>
-
-<section class="config-section">
-
-  <div class="config-section-inner">
-
-
-    <div v-if="listItems.components && listItems.components.cpu">
-      <Modal
+    <section class="config-section">
+      <div class="config-section-inner">
+        <div v-if="listItems.components && listItems.components.cpu">
+          <Modal
         :key="key"
         :btitle="'CPU'"
         :bmodel='selectedCpuOption ? selectedCpuOption.model : "Choose Option"'
@@ -50,11 +37,8 @@
         :array="listItems.components.cpu.user_selectable_options"
         :selectedOption="selectedCpuOption"
         :updateSelectedOption="updateSelectedCpuOption"
-        :addToCheckout="addToCheckout"
       />
     </div>
-   
-
 
   <div class="config-ection-inner-image">
   </div><!-- INNER IMAGE -->
@@ -70,7 +54,6 @@
           :array="listItems.components.memory.user_selectable_options"
           :selectedOption="selectedMemoryOption"
           :updateSelectedOption="updateSelectedMemoryOption"
-          :addToCheckout="addToCheckout"
         />
       </div>
 
@@ -89,7 +72,6 @@
           :array="listItems.components.disks.user_selectable_options"
           :selectedOption="selectedDiskOption"
           :updateSelectedOption="updateSelectedDiskOption"
-          :addToCheckout="addToCheckout"
         />
       </div>
     
@@ -100,8 +82,8 @@
         :key="key"
         :btitle="'Port Speed'"
         :desc="listItems.components.network.description"
-        :bmodel='selectedNetworkOption ? selectedNetworkOption.model : "Choose Option"'
-        :bprice='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : 0'
+        :bmodel="'Choose Option'"
+       
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.network.user_selectable_options"
       />
@@ -112,28 +94,17 @@
       <h2 style="margin-bottom: 20px;">Checkout</h2>
       <a href="#checkout">
 
-      <!-- <img src="../assets/img/icons/Arrow.png" alt=""> -->
       <div>
         &darr;
 
   </div>
 </a>
 </div><!-- go to checkout -->
-
 </section>
 
   <hr id="checkout" style="margin-top: 50px;">
-
-
-
-
   </main>
-
-
-
   <main class="content--container">
-
-
 <section class="content--container__checklist">
 
   <div class="checkout-box">
@@ -142,67 +113,44 @@
     </div>
 
     <div class="checkout-box-content">
-      <!-- <Checkoutboxrow
-      title='Cabinet'
-      model='-'
-      cost=''
-      number='-'
-      /> -->
       <Checkoutboxrow
       title='CPU'
       :model='selectedCpuOption ? selectedCpuOption.model : ""'
       :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : null'
       number='1 pcs'
-      @updateTotalCost="updateTotalCost('cpu', $event)"
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
       :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : null'
       number='1 pcs'
-      @updateTotalCost="updateTotalCost('memory', $event)"
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
       :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : null'
       number='1 pcs'
-      @updateTotalCost="updateTotalCost('disk', $event)"
       />
-      <!-- <Checkoutboxrow
-      title='Port Speed'
-      :model='selectedNetworkOption ? selectedNetworkOption.model : "-"'
-      :cost='selectedNetworkOption ? selectedNetworkOption.price_dkk_cent : null'
-      number='1 stks'
-      /> -->
-
-      <!-- <Checkoutboxrow
-      title='CPU'
-      :model='selectedCpuOption ? selectedCpuOption.model : "-"'
-      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
-      number='1 stks'
-      @updateTotalCost="updateTotalCost"
-      /> -->
     </div>
   </div><!-- Checkout Box -->
 
 
   <div class="total-cost-box">
-    <h2 class="total-cost-title">Total Cost</h2>
 
-  <div class="total-wrapper">
+    <h2 class="total-cost-title">Total Cost</h2>
+    <div class="total-wrapper">
     <div class="total-cost">
-      <h3>{{ totalCost }}</h3>
+      <h3>Pris</h3>
     </div>
     <div class="checkout-btn">
       <h3>Checkout</h3>
     </div>
   </div>
-
-
-    <p>(Value changes depending on chosen
+    <p>
+      (Value changes depending on chosen
       <br>
-      selections)</p>
+      selections)
+    </p>
   </div><!-- Total Cost Box -->
 
 </section><!-- Checkout Listing -->
@@ -217,26 +165,39 @@
 
   </div>
 </section><!-- Checkout Info -->
-
-
-
 </main><!-- Content Container -->
-
-
-
   <div class="footer-replacement ignore"> <h2>Footer</h2></div>
-
 </template>
 
 
 
+
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, } from 'vue';
 import Modal from '../components/Modal.vue';
 import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
-
 const listItems = ref([]);
+const selectedMemoryOption = ref(null);
+const selectedDiskOption = ref(null);
+const selectedCpuOption = ref(null);
+const key = ref(0);
+
+const updateSelectedMemoryOption = (option) => {
+  selectedMemoryOption.value = option;
+  key.value += 1;
+};
+
+const updateSelectedDiskOption = (option) => {
+  selectedDiskOption.value = option;
+  key.value += 1;
+};
+
+const updateSelectedCpuOption = (option) => {
+  selectedCpuOption.value = option;
+  key.value += 1;
+};
+
 
 
 
@@ -249,78 +210,5 @@ onMounted(async () => {
     console.error('Fejl ved indlæsning af JSON-data:', error);
   }
 });
-// const selectCabinetOption = ref(null);
-const selectedMemoryOption = ref(null);
-const selectedDiskOption = ref(null);
-const selectedCpuOption = ref(null);
-// const totalCost = parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : '')) + parseInt((selectedMemoryOption ? selectedMemoryOption.price_dkk_cent: ''));
-
-const updateSelectedMemoryOption = (option) => {
-  selectedMemoryOption.value = option;
-};
-
-const updateSelectedDiskOption = (option) => {
-  selectedDiskOption.value = option;
-};
-
-const updateSelectedCpuOption = (option) => {
-  selectedCpuOption.value = option;
-};
-
-// const updateSelectedCabinetOption = (option) => {
-//   selectCabinetOption.value = option;
-// };
-
-const addToCheckout = (selectedOption) => {
-
-  console.log('Valgt mulighed:', selectedOption);
-
-
-  //  const priceInKr = selectedOption.price_dkk_cent / 100;
-
-
-  //   updateTotalCost(priceInKr);
-};
 
 </script>
-
-<script>
-export default {
-  data() {
-    return {
-      totalCost: 0,
-      selectedProducts: {
-        cpu: null,
-        memory: null,
-        disk: null,
-      },
-      key: null,
-    };
-  },
-  methods: {
-    updateTotalCost(productCategory, newCost) {
-      this.selectedProducts[productCategory] = newCost;
-
-      this.totalCost = Object.values(this.selectedProducts).reduce((sum, cost) => sum + cost, 0)
-    }
-    // updateTotalCost(newCost) {
-    // Vue.nextTick(() => {
-    //   this.totalCost += newCost;
-    // });
-  },
-    formatCurrency(amount) {
-      return new Intl.NumberFormat('da-DK', { style: 'currency', currency: 'DKK' }).format(amount);
-    }
-  };
-</script>
-
-
-
-
-
-
-
-
-
-
-
