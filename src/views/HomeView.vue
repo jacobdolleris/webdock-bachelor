@@ -140,7 +140,7 @@
     <h2 class="total-cost-title">Total Cost</h2>
     <div class="total-wrapper">
     <div class="total-cost">
-      <h3>Pris</h3>
+      <h3>{{ totalPrice }}</h3>
     </div>
     <div class="checkout-btn">
       <h3>Checkout</h3>
@@ -173,7 +173,7 @@
 
 
 <script setup>
-import { ref, onMounted, } from 'vue';
+import { ref, onMounted, computed, } from 'vue';
 import Modal from '../components/Modal.vue';
 import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
 
@@ -183,20 +183,32 @@ const selectedDiskOption = ref(null);
 const selectedCpuOption = ref(null);
 const key = ref(0);
 
+const diskPrice = ref(0);
+const memoryPrice = ref(0);
+const cpuPrice = ref(0);
+
+const totalPrice = computed(()=> 
+  diskPrice.value + memoryPrice.value + cpuPrice.value
+);
+
 const updateSelectedMemoryOption = (option) => {
   selectedMemoryOption.value = option;
   key.value += 1;
+  memoryPrice.value = selectedMemoryOption.value.price_dkk_cent;
 };
 
 const updateSelectedDiskOption = (option) => {
   selectedDiskOption.value = option;
   key.value += 1;
+  diskPrice.value = selectedDiskOption.value.price_dkk_cent;
 };
 
 const updateSelectedCpuOption = (option) => {
   selectedCpuOption.value = option;
   key.value += 1;
+  cpuPrice.value = selectedCpuOption.value.price_dkk_cent
 };
+
 
 onMounted(async () => {
   try {
