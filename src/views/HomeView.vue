@@ -198,9 +198,6 @@ const updateSelectedCpuOption = (option) => {
   key.value += 1;
 };
 
-
-
-
 onMounted(async () => {
   try {
     const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
