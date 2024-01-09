@@ -1,4 +1,5 @@
 <script setup>
+import { fetchData } from '@/assets/api.js';
       defineProps({
         btitle: String,
         bmodel: String,
@@ -36,7 +37,7 @@
       <a href="#" class="Choose-option" @click.prevent="selectItem(item)">
         <h2>Model: {{ item.model }}</h2>
         <h2>Capacity: {{ item.capacity }} <br></h2>
-        <h2>Price: {{ item.price_dkk_cent }} kr.-</h2>
+        <h2>Price: {{ item.price_usd_display }}</h2>
       </a>
     </div>
     <button class="accept-btn cancel-btn" @click="closeModal">Cancel</button>
@@ -44,6 +45,7 @@
   </template>
   
 <script>
+
 export default {
   data() {
     return {
@@ -54,10 +56,6 @@ export default {
     };
   },
 
-
-  mounted() {
-    this.loadData();
-  },
   methods: {
     openModal() {
       this.isModalOpen = true;
@@ -75,15 +73,9 @@ export default {
       this.closeModal();
     },
 
-    async loadData() {
-      try {
-        const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
-        const finalRes = await response.json();
-        this.listItems = finalRes;
-      } catch (error) {
-        console.error('Fejl ved indlæsning af JSON-data:', error);
-      }
-    },
+    async created() {
+    this.listItems = await fetchData();
+  },
   },
 };
 
@@ -173,5 +165,15 @@ $dark-grey:#333333;
 }
     
   }// Modal
+
+
+
+  @media (max-width:900px ) {
+
+    .modal{
+      width: 100%;
+      height: auto;
+    }
+  }
   </style>
   

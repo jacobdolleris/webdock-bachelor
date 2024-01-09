@@ -27,11 +27,11 @@
     <section class="config-section">
       <div class="config-section-inner">
         <div v-if="listItems.components && listItems.components.cpu">
-          <Modal
+        <Modal
         :key="key"
         :btitle="'CPU'"
         :bmodel='selectedCpuOption ? selectedCpuOption.model : "Choose Option"'
-        :bprice='selectedCpuOption ? selectedCpuOption.price_dkk_cent : 0'
+        :bprice='selectedCpuOption ? selectedCpuOption.price_usd_display : "$ 0"'
         :mtitle="'Choose CPU'"
         :desc="listItems.components.cpu.description"
         :array="listItems.components.cpu.user_selectable_options"
@@ -48,7 +48,7 @@
           :key="key"
           :btitle="'Ram'"
           :bmodel='selectedMemoryOption ? selectedMemoryOption.model : "Choose Option"'
-          :bprice='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : 0'
+          :bprice='selectedMemoryOption ? selectedMemoryOption.price_usd_display  : "$ 0"'
           :mtitle="'Choose RAM'"
           :desc="listItems.components.memory.description"
           :array="listItems.components.memory.user_selectable_options"
@@ -66,7 +66,7 @@
           :key="key"
           :btitle="'Discs'"
           :bmodel='selectedDiskOption ? selectedDiskOption.model : "Choose Option"'
-          :bprice='selectedDiskOption ? selectedDiskOption.price_dkk_cent : 0'
+          :bprice='selectedDiskOption ? selectedDiskOption.price_usd_display : "$ 0"'
           :mtitle="'Choose Disc'"
           :desc="listItems.components.disks.description"
           :array="listItems.components.disks.user_selectable_options"
@@ -83,7 +83,6 @@
         :btitle="'Port Speed'"
         :desc="listItems.components.network.description"
         :bmodel="'Choose Option'"
-       
         :mtitle="'Choose Port Speed'"
         :array="listItems.components.network.user_selectable_options"
       />
@@ -116,19 +115,19 @@
       <Checkoutboxrow
       title='CPU'
       :model='selectedCpuOption ? selectedCpuOption.model : ""'
-      :cost='selectedCpuOption ? selectedCpuOption.price_dkk_cent : null'
+      :cost='selectedCpuOption ? selectedCpuOption.price_usd_display : null'
       number='1 pcs'
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
-      :cost='selectedMemoryOption ? selectedMemoryOption.price_dkk_cent : null'
+      :cost='selectedMemoryOption ? selectedMemoryOption.price_usd_display : null'
       number='1 pcs'
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
-      :cost='selectedDiskOption ? selectedDiskOption.price_dkk_cent : null'
+      :cost='selectedDiskOption ? selectedDiskOption.price_usd_display : null'
       number='1 pcs'
       />
     </div>
@@ -140,7 +139,7 @@
     <h2 class="total-cost-title">Total Cost</h2>
     <div class="total-wrapper">
     <div class="total-cost">
-      <h3>{{ totalPrice }}</h3>
+      <h3>$ {{ totalPriceInDollars }}</h3>
     </div>
     <div class="checkout-btn">
       <h3>Checkout</h3>
@@ -166,7 +165,6 @@
   </div>
 </section><!-- Checkout Info -->
 </main><!-- Content Container -->
-  <div class="footer-replacement ignore"> <h2>Footer</h2></div>
 </template>
 
 
@@ -176,6 +174,8 @@
 import { ref, onMounted, computed, } from 'vue';
 import Modal from '../components/Modal.vue';
 import Checkoutboxrow from '@/components/Checkoutboxrow.vue'
+
+import { fetchData } from '@/assets/api.js';
 
 const listItems = ref([]);
 const selectedMemoryOption = ref(null);
@@ -194,30 +194,42 @@ const totalPrice = computed(()=>
 const updateSelectedMemoryOption = (option) => {
   selectedMemoryOption.value = option;
   key.value += 1;
-  memoryPrice.value = selectedMemoryOption.value.price_dkk_cent;
+  memoryPrice.value = selectedMemoryOption.value.price_usd_cent;
 };
 
 const updateSelectedDiskOption = (option) => {
   selectedDiskOption.value = option;
   key.value += 1;
-  diskPrice.value = selectedDiskOption.value.price_dkk_cent;
+  diskPrice.value = selectedDiskOption.value.price_usd_cent;
 };
 
 const updateSelectedCpuOption = (option) => {
   selectedCpuOption.value = option;
   key.value += 1;
-  cpuPrice.value = selectedCpuOption.value.price_dkk_cent
+  cpuPrice.value = selectedCpuOption.value.price_usd_cent;
 };
 
 
+
+  // Dette konvertere prisen fra cent til dollars med to decimaler:
+const toDollars = (priceInCents) => {
+  return (priceInCents / 100).toFixed(2);
+};
+const totalPriceInDollars = computed(() => {
+  const diskPriceInDollars = toDollars(diskPrice.value);
+  const memoryPriceInDollars = toDollars(memoryPrice.value);
+  const cpuPriceInDollars = toDollars(cpuPrice.value);
+
+  return (
+    parseFloat(diskPriceInDollars) +
+    parseFloat(memoryPriceInDollars) +
+    parseFloat(cpuPriceInDollars)
+  ).toFixed(2);
+});
+
+
 onMounted(async () => {
-  try {
-    const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');
-    const finalRes = await response.json();
-    listItems.value = finalRes;
-  } catch (error) {
-    console.error('Fejl ved indlæsning af JSON-data:', error);
-  }
+  listItems.value = await fetchData();
 });
 
 </script>

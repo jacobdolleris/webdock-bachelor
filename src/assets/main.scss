@@ -377,3 +377,54 @@ margin-top: -150px;
       }
     }
   }
+
+
+
+  // Screen-size - New Feature - Responsive 
+
+  @media (max-width:900px ) {
+    
+    .config-ection-inner-image{
+      display: none;
+    }
+    .config-section .config-section-inner{
+      width: auto;
+    }
+
+    header h1{
+      width: auto;
+    }
+    .content--container{
+      width: auto;
+      display: block;
+    }
+
+    .config-section-inner-option{
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .config-section .config-section-inner{
+      justify-content: space-around;
+    }
+    .content--container__checkinfo{
+      display: none;
+    }
+    .content--container__checklist{
+      width: 100%;
+    }
+
+    .content--container__checklist .checkout-box{
+      width: auto;
+    }
+    .content--container__checklist .total-cost-box .total-wrapper .checkout-btn{
+      width: 200px;
+      margin-left: 10px;
+    }
+
+    .content--container__checklist .total-cost-box{
+      width: auto;
+    }
+    .content--container__checklist .total-cost-box .total-wrapper .total-cost{
+      width: 200px;
+    }
+  }
