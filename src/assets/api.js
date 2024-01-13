@@ -1,4 +1,3 @@
-
 export async function fetchData() {
     try {
       const response = await fetch('https://webdock.io/en/platform_data/getConfigurationData');

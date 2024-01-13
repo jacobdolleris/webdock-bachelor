@@ -3,7 +3,7 @@
         title: String,
         model: String,
         number: String,
-        cost: Number
+        cost: String
         
     })
 </script>

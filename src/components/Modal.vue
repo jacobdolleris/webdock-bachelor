@@ -3,7 +3,7 @@ import { fetchData } from '@/assets/api.js';
       defineProps({
         btitle: String,
         bmodel: String,
-        bprice: Number,
+        bprice: String,
         mtitle: String,
         desc: String,
         array: Array,

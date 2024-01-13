@@ -114,20 +114,20 @@
     <div class="checkout-box-content">
       <Checkoutboxrow
       title='CPU'
-      :model='selectedCpuOption ? selectedCpuOption.model : ""'
-      :cost='selectedCpuOption ? selectedCpuOption.price_usd_display : null'
+      :model='selectedCpuOption ? selectedCpuOption.model : "-"'
+      :cost='selectedCpuOption ? selectedCpuOption.price_usd_display : "-"'
       number='1 pcs'
       />
       <Checkoutboxrow
       title='RAM'
       :model='selectedMemoryOption ? selectedMemoryOption.model : "-"'
-      :cost='selectedMemoryOption ? selectedMemoryOption.price_usd_display : null'
+      :cost='selectedMemoryOption ? selectedMemoryOption.price_usd_display : "-"'
       number='1 pcs'
       />
       <Checkoutboxrow
       title='DISCS'
       :model='selectedDiskOption ? selectedDiskOption.model : "-"'
-      :cost='selectedDiskOption ? selectedDiskOption.price_usd_display : null'
+      :cost='selectedDiskOption ? selectedDiskOption.price_usd_display : "-"'
       number='1 pcs'
       />
     </div>
@@ -167,9 +167,6 @@
 </main><!-- Content Container -->
 </template>
 
-
-
-
 <script setup>
 import { ref, onMounted, computed, } from 'vue';
 import Modal from '../components/Modal.vue';
@@ -187,9 +184,10 @@ const diskPrice = ref(0);
 const memoryPrice = ref(0);
 const cpuPrice = ref(0);
 
-const totalPrice = computed(()=> 
-  diskPrice.value + memoryPrice.value + cpuPrice.value
-);
+// Afkommenterede det, da den ikke bliver brugt til noget
+// const totalPrice = computed(()=> 
+//   diskPrice.value + memoryPrice.value + cpuPrice.value
+// );
 
 const updateSelectedMemoryOption = (option) => {
   selectedMemoryOption.value = option;
@@ -210,11 +208,11 @@ const updateSelectedCpuOption = (option) => {
 };
 
 
-
   // Dette konvertere prisen fra cent til dollars med to decimaler:
 const toDollars = (priceInCents) => {
   return (priceInCents / 100).toFixed(2);
 };
+
 const totalPriceInDollars = computed(() => {
   const diskPriceInDollars = toDollars(diskPrice.value);
   const memoryPriceInDollars = toDollars(memoryPrice.value);
@@ -233,3 +231,23 @@ onMounted(async () => {
 });
 
 </script>
+
+<!-- Prøvede at få det til at virke, gik sgu ikke rigtigt, tror vi skal bruge vuex eller pinia for at gemme i local storage -->
+<!-- <script>
+export default {
+  data() {
+    return {
+      selectedCpuOption: JSON.parse(localStorage.getItem('selectedCpuOption')) || null,
+    }
+  },
+  methods: {
+    updateSelectedCpuOption(newOption) {
+      this.selectedCpuOption = newOption;
+      localStorage.setItem('selectedCpuOption', JSON.stringify(newOption));
+    },
+    saveSelectedOption() {
+      this.updateSelectedCpuOption(this.selectedCpuOption);
+    }
+  },
+}
+</script> -->
