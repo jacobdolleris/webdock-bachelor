@@ -1,7 +1,7 @@
 <template>
   <main class="content">
     <header>
-      <h1>Configure your OWN VPS server with YOUR own cinfiguration settings</h1>
+      <h1>Configure your OWN VPS server with YOUR own configuration settings</h1>
       <h2>For the best experience!</h2>
       <div class="goto-config">
         <a href="#config">
@@ -184,10 +184,6 @@ const diskPrice = ref(0);
 const memoryPrice = ref(0);
 const cpuPrice = ref(0);
 
-// Afkommenterede det, da den ikke bliver brugt til noget
-// const totalPrice = computed(()=> 
-//   diskPrice.value + memoryPrice.value + cpuPrice.value
-// );
 
 const updateSelectedMemoryOption = (option) => {
   selectedMemoryOption.value = option;
@@ -209,6 +205,7 @@ const updateSelectedCpuOption = (option) => {
 
 
   // Dette konvertere prisen fra cent til dollars med to decimaler:
+  
 const toDollars = (priceInCents) => {
   return (priceInCents / 100).toFixed(2);
 };
