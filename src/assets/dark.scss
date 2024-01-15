@@ -1,0 +1,30 @@
+// Dark
+$teal-color: #01A1A1;
+$orange-color:#EE8007;
+$webdock-green:#018971;
+$dark-green:#008661;
+$dark-grey-background:#2C404A;
+$grey:#666666;
+$dark-grey:#333333;
+
+h1, h2, h3, h4, h5, h6, p, span {
+     color: white !important;
+    }
+
+.content{
+    background-image: url(/src/assets/img/awbck.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.config-section-inner-option {
+    background-color: $dark-grey-background;
+}
+
+.dropdown-content {
+  background-color: $dark-grey-background;
+}
+
+.content--container {
+  background-color: $dark-grey-background;
+}

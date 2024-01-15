@@ -1,6 +1,7 @@
 <template>
   <main class="content">
     <header>
+      <button @click="toggleTheme">Toggle Theme</button>
       <h1>Configure your OWN VPS server with YOUR own configuration settings</h1>
       <h2>For the best experience!</h2>
       <div class="goto-config">
@@ -228,6 +229,17 @@ onMounted(async () => {
 });
 
 </script>
+
+<script>
+export default {
+  methods: {
+    toggleTheme() {
+      document.body.classList.toggle('light-theme');
+    },
+  },
+}
+</script>
+
 
 <!-- Prøvede at få det til at virke, gik sgu ikke rigtigt, tror vi skal bruge vuex eller pinia for at gemme i local storage -->
 <!-- <script>

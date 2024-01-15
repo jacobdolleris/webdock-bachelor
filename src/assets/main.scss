@@ -1,17 +1,15 @@
 //  Imports
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import 'dark.scss';
 
-//  Variables
-$teal-color: #01A1A1;
-$orange-color:#EE8007;
-$webdock-green:#018971;
-$dark-green:#008661;
-$dark-grey-background:#2C404A;
-$grey:#666666;
-$dark-grey:#333333;
+body.light-theme {
+@import 'light.scss';
+}
+
 
 
 html { scroll-behavior: smooth; } 
+
 //  Clear
 *{
     margin:0;
@@ -66,15 +64,23 @@ hr{
     }
   }
 
-  .content{
-    
-    background-image: url(/src/assets/img/awbck.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   header{
     text-align: center;
+
+    button {
+      background-color: $webdock-green;
+      border: 0;
+      float: right;
+      height: 50px;
+      margin-right: 1em;
+      margin-top: 1em;
+      width: 120px;
+    }
+
+    button:hover {
+      background-color: $dark-green;
+      cursor: pointer;
+    }
    
     h1{
       width: 50%;
@@ -186,7 +192,6 @@ hr{
     width: 250px; 
     border:3px solid $teal-color;
     border-radius: 10px;
-    background-color:$dark-grey-background;
     text-align: center;
 
     h3{
@@ -228,7 +233,6 @@ margin-top: -150px;
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: $dark-grey-background;
     min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -258,7 +262,7 @@ margin-top: -150px;
   //Checkout
 
   .content--container {
-    background-color: #2C404A;
+    background-color: $dark-grey-background;
     display: flex;
     height: 705px;
     width: 100%;
@@ -275,7 +279,6 @@ margin-top: -150px;
         height: fit-content;
         margin: 0 auto;
         width: 700px;
-
   
         .checkout-box-header {
           background-color: #EE8007;

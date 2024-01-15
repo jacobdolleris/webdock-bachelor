@@ -1,0 +1,57 @@
+// Light
+// #00956C
+$teal-color: #01A1A1;
+$orange-color:#EE8007;
+$webdock-green:#489A59;
+$dark-green:#00956C;
+$dark-grey-background: #008661;
+$white:#FFFFFF;
+$dark-grey:#b67171;
+
+// h1, h2, h3, h4, h5, h6, p, span {
+//  color: black !important;
+// }
+
+header h1 {
+  color: #000000 !important;
+}
+
+header h2 {
+  color: #000000 !important;
+}
+
+.content{
+    background-image: url(/src/assets/img/light-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.config-section-inner-option {
+  background-color: $white;
+  border-color: $webdock-green;
+}
+
+.config-section-inner-option h2 {
+  color: #000000 !important;
+}
+
+.config-section-inner-option:hover {
+  border-color: $orange-color;
+}
+
+.dropdown-content {
+  background-color: $dark-grey-background;
+}
+
+.content--container {
+  background-color: $dark-grey-background;
+}
+
+.content--container__checkinfo .text-wrapper h1, h2, h3 {
+  color: $white !important;
+}
+
+.total-cost {
+  background-color: $orange-color !important;
+  border-color: $white !important;
+}
