@@ -55,67 +55,67 @@ hr{
     }
   
   }
-  .footer-replacement{
+
+.footer-replacement{
     height: 300px;
     background-color:$dark-grey;
 
     h2{
         background-color:$dark-grey;
     }
+}
+
+header {
+  text-align: center;
+
+  button {
+    background-color: transparent;
+    border: 0;
+    float: right;
+    font-weight: bold;
   }
 
-  header{
-    text-align: center;
+  button > img {
+    width: 20%;
+  }
 
-    button {
-      background-color: $webdock-green;
-      border: 0;
-      float: right;
-      height: 50px;
-      margin-right: 1em;
-      margin-top: 1em;
-      width: 120px;
+  button:hover {
+    cursor: pointer;
+  }
+   
+  h1 {
+    width: 50%;
+    margin: auto;
+    padding:40px;
+  }
+
+  img{
+    margin: 40px;
+  }
+  
+  .goto-config {
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    a {
+      font-size: 40px;
+      text-decoration: none;
     }
 
-    button:hover {
-      background-color: $dark-green;
+    div {
+      background-color: $teal-color;
+      border-radius: 100%;
+      height: 50px;
+      margin: auto;
+      width: 50px;
+    }
+
+    div:hover {
+      background-color: #018a8a;
       cursor: pointer;
     }
-   
-    h1{
-      width: 50%;
-      margin: auto;
-      padding:40px;
-    }
-    img{
-      margin: 40px;
-    }
-  
-    .goto-config {
-      margin-bottom: 20px;
-      margin-top: 20px;
-
-      a {
-        font-size: 40px;
-        text-decoration: none;
-      }
-
-      div {
-        background-color: $teal-color;
-        border-radius: 100%;
-        height: 50px;
-        margin: auto;
-        width: 50px;
-
-
-      }
-
-      div:hover {
-        background-color: #018a8a;
-        cursor: pointer;
-      }
-    }
   }
+} // Header
 
 
 
@@ -158,11 +158,12 @@ hr{
         }
 
     .goto-checkout {
-      // background-color: red;
-
-
       margin-top: 30px;
       text-align: center;
+
+      h2 {
+        margin-bottom: 20px;
+      }
 
       a {
         font-size: 40px;
@@ -257,9 +258,11 @@ margin-top: -150px;
   .dropdown:hover .dropdown-btn {
     border-radius: 10px 10px 0px 0;
   }
+//Checkout
 
-
-  //Checkout
+#checkout {
+  margin-top: 50px;
+}
 
   .content--container {
     background-color: $dark-grey-background;

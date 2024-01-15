@@ -12,6 +12,10 @@ $dark-grey:#b67171;
 //  color: black !important;
 // }
 
+hr{
+  border-color: $dark-grey;
+}
+
 header h1 {
   color: #000000 !important;
 }
@@ -19,6 +23,7 @@ header h1 {
 header h2 {
   color: #000000 !important;
 }
+// Header
 
 .content{
     background-image: url(/src/assets/img/light-bg.png);
@@ -35,6 +40,10 @@ header h2 {
   color: #000000 !important;
 }
 
+.config-section-inner-option h3 {
+  color: #000000 !important;
+}
+
 .config-section-inner-option:hover {
   border-color: $orange-color;
 }
@@ -47,7 +56,11 @@ header h2 {
   background-color: $dark-grey-background;
 }
 
-.content--container__checkinfo .text-wrapper h1, h2, h3 {
+.goto-checkout > h2 {
+  color: #000000;
+}
+
+.text-wrapper {
   color: $white !important;
 }
 

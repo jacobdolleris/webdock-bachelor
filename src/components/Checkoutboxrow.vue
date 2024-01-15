@@ -1,15 +1,14 @@
 <script setup>
-    defineProps({
-        title: String,
-        model: String,
-        number: String,
-        cost: String
-        
-    })
+  defineProps({
+    title: String,
+    model: String,
+    number: String,
+    cost: String
+  })
 </script>
 
 <template>
-        <div class="checkout-box-content-row">
+  <div class="checkout-box-content-row">
           <div class="option-title">
             <h3>{{ title }}</h3>
           </div>
@@ -23,7 +22,7 @@
         <p>{{ cost }}</p>
       </div>
       
-        </div><!-- Checkbox Row -->
+  </div><!-- Checkbox Row -->
 </template>
 
 <style lang="scss" scoped>

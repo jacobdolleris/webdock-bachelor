@@ -1,7 +1,10 @@
 <template>
   <main class="content">
     <header>
-      <button @click="toggleTheme">Toggle Theme</button>
+      <button @click="toggleTheme">
+        <!-- {{ buttonText }} -->
+        <img :src="themeImage" alt="Theme Switcher">
+      </button>
       <h1>Configure your OWN VPS server with YOUR own configuration settings</h1>
       <h2>For the best experience!</h2>
       <div class="goto-config">
@@ -91,7 +94,7 @@
 
     </div><!-- Config Section Inner -->
     <div class="goto-checkout">
-      <h2 style="margin-bottom: 20px;">Checkout</h2>
+      <h2>Checkout</h2>
       <a href="#checkout">
 
       <div>
@@ -102,7 +105,7 @@
 </div><!-- go to checkout -->
 </section>
 
-  <hr id="checkout" style="margin-top: 50px;">
+  <hr id="checkout">
   </main>
   <main class="content--container">
 <section class="content--container__checklist">
@@ -133,7 +136,6 @@
       />
     </div>
   </div><!-- Checkout Box -->
-
 
   <div class="total-cost-box">
 
@@ -231,10 +233,30 @@ onMounted(async () => {
 </script>
 
 <script>
+import lightThemeImage from '@/assets/img/icons/light-theme.png';
+import DarkThemeImage from '@/assets/img/icons/dark-theme.png';
+
 export default {
+  data() {
+    return {
+      isDarkTheme: false,
+    };
+  },
+
+  computed: {
+    themeImage() {
+      return this.isDarkTheme ? DarkThemeImage : lightThemeImage;
+    },
+
+    // buttonText() {
+    //   return this.isDarkTheme ? 'Dark' : 'Light';
+    // }
+  },
+
   methods: {
     toggleTheme() {
-      document.body.classList.toggle('light-theme');
+      this.isDarkTheme = !this.isDarkTheme;
+      document.body.classList.toggle('light-theme', this.isDarkTheme);
     },
   },
 }
