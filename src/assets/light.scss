@@ -32,7 +32,7 @@ header h2 {
 }
 
 .config-section-inner-option {
-  background-color: $white;
+  background-color: $white !important;
   border-color: $webdock-green;
 }
 
@@ -67,4 +67,30 @@ header h2 {
 .total-cost {
   background-color: $orange-color !important;
   border-color: $white !important;
+}
+
+.modal {
+  background-color: $white;
+  border-color: $webdock-green;
+
+  a {
+    color: #000000;
+  }
+    .description {
+      color: #000000 !important;
+    }
+
+    .modal-content {
+      h1 {
+        color: #000000;
+      }
+    }
+}
+
+.modal-inner {
+  background-color: $webdock-green !important;
+
+  &:hover {
+    background-color: $orange-color !important;
+  }
 }
