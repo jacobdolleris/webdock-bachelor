@@ -2,7 +2,6 @@
   <main class="content">
     <header>
       <button @click="toggleTheme">
-        <!-- {{ buttonText }} -->
         <img :src="themeImage" alt="Theme Switcher">
       </button>
       <h1>Configure your OWN VPS server with YOUR own configuration settings</h1>
