@@ -238,13 +238,13 @@ import DarkThemeImage from '@/assets/img/icons/dark-theme2.png';
 export default {
   data() {
     return {
-      isDarkTheme: false,
+      isLightTheme: false,
     };
   },
 
   computed: {
     themeImage() {
-      return this.isDarkTheme ? DarkThemeImage : lightThemeImage;
+      return this.isLightTheme ? DarkThemeImage : lightThemeImage;
     },
 
     // buttonText() {
@@ -254,8 +254,8 @@ export default {
 
   methods: {
     toggleTheme() {
-      this.isDarkTheme = !this.isDarkTheme;
-      document.body.classList.toggle('light-theme', this.isDarkTheme);
+      this.isLightTheme = !this.isLightTheme;
+      document.body.classList.toggle('light-theme', this.isLightTheme);
     },
   },
 }
