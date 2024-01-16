@@ -233,8 +233,8 @@ onMounted(async () => {
 </script>
 
 <script>
-import lightThemeImage from '@/assets/img/icons/light-theme.png';
-import DarkThemeImage from '@/assets/img/icons/dark-theme.png';
+import lightThemeImage from '@/assets/img/icons/light-theme2.png';
+import DarkThemeImage from '@/assets/img/icons/dark-theme2.png';
 
 export default {
   data() {
